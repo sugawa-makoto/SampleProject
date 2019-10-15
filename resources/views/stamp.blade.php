@@ -7,6 +7,6 @@
    <link rel="stylesheet" href="">
  </head>
  <body>
-   <h1>ようこそ {{$name ?? ''}} さん。マイページ画面です。</h1>
+	<h1>{{$val}}</h1>
  </body>
  </html> 
