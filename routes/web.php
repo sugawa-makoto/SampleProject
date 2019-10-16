@@ -15,3 +15,6 @@ Route::get('hello', 'HelloController@hello');
 Route::get('stamp', 'StampController@stamp');
 
 
+Route::get('/database', function() {
+    var_dump(((array) DB::select('SELECT database();')[0])['database()']);
+});
