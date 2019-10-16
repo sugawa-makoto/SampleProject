@@ -10,7 +10,11 @@
  <body>
  	<div class="all_wrapper">
 	 	<div class="wrapper_main">
-			<div class="wrapper_day_time"><h1>{{$val}}</h1></div>
+			<div class="wrapper_day_time">
+				<div class="day"><h1>{{$date2}}</h1></div>
+				<div class="time"><h1>{{$time2}}</h1></div>
+			</div>
+			
 				<div class="wrapper_select_button">
 					<a href="#" class="btn-circle-border-simple_in">出勤</a>
 					<a href="#" class="btn-circle-border-simple_out">退勤</a>

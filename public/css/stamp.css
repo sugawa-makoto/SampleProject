@@ -61,6 +61,7 @@
    display: flex;
     -webkit-flex-flow: row nowrap;
    flex-flow: row nowrap;
+   width: 80%;
 }
 
 .wrapper_day_time {
@@ -68,6 +69,9 @@
     justify-content: center; /*左右中央揃え*/
     align-items: center;     /*上下中央揃え*/
     margin-right: 20px;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   width: 70%;
 }
 
 .all_wrapper {
@@ -75,4 +79,9 @@
     display: flex;
     justify-content: center; /*左右中央揃え*/
     align-items: center;     /*上下中央揃え*/
+}
+.wrapper_select_button {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
 }
