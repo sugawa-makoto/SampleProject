@@ -13,6 +13,7 @@
 
 Route::get('hello', 'HelloController@hello');
 Route::get('stamp', 'StampController@stamp');
+Route::get('request', 'RequestController@index');
 
 
 Route::get('/database', function() {

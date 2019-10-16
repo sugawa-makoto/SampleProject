@@ -1,0 +1,78 @@
+/*出勤ボタンのCSS*/
+.btn-circle-border-simple_in {
+  display: inline-block;
+  text-decoration: none;
+  color: #668ad8;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: solid 2px #668ad8;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  transition: .4s;
+}
+
+.btn-circle-border-simple_in:hover {
+  background: #b3e1ff;
+}
+/*退勤ボタンのCSS*/
+.btn-circle-border-simple_out {
+  display: inline-block;
+  text-decoration: none;
+  color: #dc143c;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: solid 2px #dc143c;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  transition: .4s;
+}
+
+.btn-circle-border-simple_out:hover {
+  background: #ff9999;
+}
+/*勤務実績ボタンのCSS*/
+.btn-circle-border-simple_list {
+  display: inline-block;
+  text-decoration: none;
+  color: #00947a;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: solid 2px #00947a;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  transition: .4s;
+}
+
+.btn-circle-border-simple_list:hover {
+  background: #99ffcc;
+}
+
+.wrapper_main {
+   display: -webkit-flex;
+   display: flex;
+    -webkit-flex-flow: row nowrap;
+   flex-flow: row nowrap;
+}
+
+.wrapper_day_time {
+    display: flex;
+    justify-content: center; /*左右中央揃え*/
+    align-items: center;     /*上下中央揃え*/
+    margin-right: 20px;
+}
+
+.all_wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center; /*左右中央揃え*/
+    align-items: center;     /*上下中央揃え*/
+}
