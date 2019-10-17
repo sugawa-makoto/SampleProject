@@ -14,7 +14,6 @@
 				<div class="day"><h1>{{$date2}}</h1></div>
 				<div class="time"><h1>{{$time2}}</h1></div>
 			</div>
-			
 				<div class="wrapper_select_button">
 					<a href="#" class="btn-circle-border-simple_in">出勤</a>
 					<a href="#" class="btn-circle-border-simple_out">退勤</a>
@@ -22,10 +21,24 @@
 				</div>
 		</div>
 	</div>
-
-
-
-
+    <div id="clock"></div>
+    <script>
+    	function set2digits(number) {
+		    if (number < 10) {
+		        return '0' + number;
+		    }
+		    return number;
+		}
+       function setClock() {
+          var nowTime = new Date();
+          var nowHour = nowTime.getHours();
+          var nowMin  = nowTime.getMinutes();
+          var nowSec  = nowTime.getSeconds();
+          var clock   = nowHour + ":" + nowMin + ":" + nowSec;
+          document.getElementById("clock").innerHTML = clock;
+       }
+       setInterval('setClock()', 1000);
+    </script>
 
 
 
