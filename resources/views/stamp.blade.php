@@ -35,7 +35,7 @@ function setClock() {
     var nowHour = set2digits(nowTime.getHours());
     var nowMin  = set2digits(nowTime.getMinutes());
     var nowSec  = set2digits(nowTime.getSeconds());
-    var clock   = "<h1>" + nowHour + "時" + nowMin + "分<span style='font-size: 25px;'>" + nowSec +"秒</span></h1>";
+    var clock   = "<h1><span style='font-size: 85px;color:#000000;'>" + nowHour + "</span>:<span style='font-size: 85px;color:#000000;'>" + nowMin + "</span>:<span style='font-size: 25px;color:#FF0000;'>" + nowSec + "</span></h1>";
     document.getElementById("clock").innerHTML = clock;
 }
        setInterval('setClock()', 1000);
