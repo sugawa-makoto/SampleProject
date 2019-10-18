@@ -12,7 +12,7 @@
 	 	<div class="wrapper_main">
 			<div class="wrapper_day_time">
 				<div class="day"><h1>{{$date2}}</h1></div>
-				<div class="time"><h1>{{$time2}}</h1></div>
+				<div id="clock"></div>
 			</div>
 				<div class="wrapper_select_button">
 					<a href="#" class="btn-circle-border-simple_in">出勤</a>
@@ -21,7 +21,8 @@
 				</div>
 		</div>
 	</div>
-    <div id="clock"></div>
+	<!-- 上に移植 -->
+    <!-- <div id="clock"></div> -->
     <script>
     	function set2digits(number) {
 		    if (number < 10) {
@@ -29,14 +30,14 @@
 		    }
 		    return number;
 		}
-       function setClock() {
-          var nowTime = new Date();
-          var nowHour = nowTime.getHours();
-          var nowMin  = nowTime.getMinutes();
-          var nowSec  = nowTime.getSeconds();
-          var clock   = nowHour + ":" + nowMin + ":" + nowSec;
-          document.getElementById("clock").innerHTML = clock;
-       }
+function setClock() {
+    var nowTime = new Date();
+    var nowHour = set2digits(nowTime.getHours());
+    var nowMin  = set2digits(nowTime.getMinutes());
+    var nowSec  = set2digits(nowTime.getSeconds());
+    var clock   = "<h1>" + nowHour + "時" + nowMin + "分<span style='font-size: 25px;'>" + nowSec +"秒</span></h1>";
+    document.getElementById("clock").innerHTML = clock;
+}
        setInterval('setClock()', 1000);
     </script>
 
