@@ -5,22 +5,56 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>I/OM=>manager_stamp</title>
    <link rel="stylesheet" href="css/stamp.css">
+   <link rel="stylesheet" href="css/pure-drawer.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
  </head>
  <body>
- 	<div class="all_wrapper">
-	 	<div class="wrapper_main">
-			<div class="wrapper_day_time">
-				<div class="day"><h1>{{$date2}}</h1></div>
-				<div id="clock"></div>
-			</div>
-				<div class="wrapper_select_button">
-					<a href="#" class="btn-circle-border-simple_in">出勤</a>
-					<a href="#" class="btn-circle-border-simple_out">退勤</a>
-					<a href="#" class="btn-circle-border-simple_list">勤務実績</a>
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="pure-container" data-effect="pure-effect-slide">
+    <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
+    <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
+        <span class="pure-toggle-icon"></span>
+    </label>
+
+    <div class="pure-drawer" data-position="left">
+        設定
+    </div>
+    <div class="pure-pusher-container">
+        <div class="pure-pusher">
+            
+
+
+
+		 	<div class="all_wrapper">
+			 	<div class="wrapper_main">
+					<div class="wrapper_day_time">
+						<div class="day"><h1>{{$date2}}</h1></div>
+						<div id="clock"></div>
+					</div>
+						<div class="wrapper_select_button">
+							<a href="#" class="btn-circle-border-simple_in">出勤</a>
+							<a href="#" class="btn-circle-border-simple_out">退勤</a>
+							<a href="#" class="btn-circle-border-simple_list">勤務実績</a>
+						</div>
 				</div>
-		</div>
-	</div>
+			</div>
+        </div>
+    </div>
+    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
+</div>
+
+
 	<!-- 上に移植 -->
     <!-- <div id="clock"></div> -->
     <script>
@@ -35,7 +69,7 @@ function setClock() {
     var nowHour = set2digits(nowTime.getHours());
     var nowMin  = set2digits(nowTime.getMinutes());
     var nowSec  = set2digits(nowTime.getSeconds());
-    var clock   = "<h1><span style='font-size: 85px;color:#000000;'>" + nowHour + "</span>:<span style='font-size: 85px;color:#000000;'>" + nowMin + "</span>:<span style='font-size: 25px;color:#FF0000;'>" + nowSec + "</span></h1>";
+    var clock   = "<h1>" + nowHour + ":" + nowMin + "</h1>";
     document.getElementById("clock").innerHTML = clock;
 }
        setInterval('setClock()', 1000);

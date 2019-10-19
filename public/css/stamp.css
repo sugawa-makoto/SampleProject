@@ -71,7 +71,7 @@
     margin-right: 20px;
    -webkit-flex-direction: column;
    flex-direction: column;
-   width: 70%;
+   width: 100%;
 }
 
 .all_wrapper {
@@ -84,4 +84,24 @@
     display: flex;
     width: 70%;
     justify-content: space-around;
+}
+
+.place1,.place2,.place4 {
+  font-size: 85px;
+  font-weight: bold;
+}
+.clock_size {
+  width: 100%;
+}
+.clock_size_sec {
+  margin-top: 100%;
+  margin-bottom: 0;
+}
+.hms {
+   display: -webkit-flex;
+   display: flex;
+    -webkit-flex-flow: row nowrap;
+   flex-flow: row nowrap;
+   width: 100%;
+   margin:0 auto;
 }
