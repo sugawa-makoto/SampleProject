@@ -19,3 +19,6 @@ Route::get('request', 'RequestController@index');
 Route::get('/database', function() {
     var_dump(((array) DB::select('SELECT database();')[0])['database()']);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
