@@ -10,7 +10,7 @@
  </head>
  <!-- ↑宣言関係↑ -->
  <body>
- <!-- ↓サイト表示領域とpure-drawer↓ -->	
+ <!-- ↓サイト表示領域とpure-drawer↓ -->
 	<div class="pure-container" data-effect="pure-effect-slide">
     <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
     <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
@@ -31,7 +31,15 @@
 	    </div>
 	    <div class="pure-pusher-container">
 	        <div class="pure-pusher">       
-			<!-- ↓サイト表示領域↓ -->
+				<!-- ↓トップバーの内容↓ -->
+	 		 	<div class="top_bar">
+					<div class="top_bar_brand">I/O=>manager</div>
+					<div class="top_bar_user">
+						<div class="top_bar_user_photo"><img src="https://nekogazou.com/wp-content/uploads/2013/09/140.jpg"></div>
+						<div class="top_bar_user_name">変数　須川</div>
+					</div>
+				</div>
+				<!-- ↓固有コンテンツ表示領域↓ -->	
 			 	<div class="all_wrapper">
 				 	<div class="wrapper_main">
 						<div class="wrapper_day_time">
@@ -45,7 +53,7 @@
 							</div>
 					</div>
 				</div>
-			<!-- ↑サイト表示領域↑ -->
+				<!-- ↑固有コンテンツ表示領域↑ -->
 	        </div>
 	    </div>
 	    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>

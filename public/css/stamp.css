@@ -86,6 +86,7 @@
     display: flex;
     justify-content: center; /*左右中央揃え*/
     align-items: center;     /*上下中央揃え*/
+    height: 90%;
 }
 .wrapper_select_button {
     display: flex;
@@ -95,4 +96,48 @@
 
 .size {
   font-size: 100px;
+}
+
+.top_bar {
+  height: 6%;
+  width: 100%;
+  background: #005493;
+}
+.top_bar_brand {
+  display: flex;
+  justify-content: center; /*左右中央揃え*/
+  align-items: center;     /*上下中央揃え*/
+  margin-left:5%;
+  font-weight: bold;
+  font-size: 20px;
+}
+.top_bar_user_photo {
+  display: flex;
+  justify-content: center; /*左右中央揃え*/
+  align-items: center;     /*上下中央揃え*/
+}
+.top_bar_user_photo img {
+  width: 50px;
+  border-radius: 50%;
+}
+.top_bar_user_name {
+  display: flex;
+  justify-content: center; /*左右中央揃え*/
+  align-items: center;     /*上下中央揃え*/
+  margin-left:10%;
+}
+.top_bar_user {
+   display: -webkit-flex;
+   display: flex;
+    -webkit-flex-flow: row nowrap;
+   flex-flow: row nowrap;
+   width:11%;
+}
+.top_bar {
+   display: -webkit-flex;
+   display: flex;
+    -webkit-flex-flow: row nowrap;
+   flex-flow: row nowrap;
+   color: white;
+   justify-content: space-between;
 }

@@ -75,11 +75,11 @@ body {
   cursor: pointer;
   display: block;
   position: fixed;
-  top: 15px;
+  top: 4px;
   z-index: 99;
   color: #5d809d;
-  width: 70px;
-  height: 70px;
+  width: 45px;
+  height: 45px;
   transition: all 400ms ease-in-out;
   border: 2px solid #5d809d;
   border-radius: 50%;
@@ -110,7 +110,7 @@ body {
 .pure-toggle-label .pure-toggle-icon:before,
 .pure-toggle-label .pure-toggle-icon:after {
   position: absolute;
-  top: 50%;
+  top: 54.5%;
   left: 50%;
   height: 4px;
   width: 35px;
