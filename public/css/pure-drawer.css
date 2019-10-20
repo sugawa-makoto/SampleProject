@@ -75,7 +75,7 @@ body {
   cursor: pointer;
   display: block;
   position: fixed;
-  top: 4px;
+  top: 2.5%;
   z-index: 99;
   color: #5d809d;
   width: 45px;
@@ -137,7 +137,7 @@ body {
 }
 
 .pure-toggle-label[data-toggle-label=left] {
-  left: 15px;
+  left: 1%;
   right: auto;
 }
 

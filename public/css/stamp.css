@@ -97,17 +97,11 @@
 .size {
   font-size: 100px;
 }
-
-.top_bar {
-  height: 6%;
-  width: 100%;
-  background: #005493;
-}
 .top_bar_brand {
   display: flex;
   justify-content: center; /*左右中央揃え*/
   align-items: center;     /*上下中央揃え*/
-  margin-left:5%;
+  margin-left:7%;
   font-weight: bold;
   font-size: 20px;
 }
@@ -127,17 +121,20 @@
   margin-left:10%;
 }
 .top_bar_user {
-   display: -webkit-flex;
-   display: flex;
-    -webkit-flex-flow: row nowrap;
-   flex-flow: row nowrap;
-   width:11%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  width:11%;
 }
 .top_bar {
-   display: -webkit-flex;
-   display: flex;
-    -webkit-flex-flow: row nowrap;
-   flex-flow: row nowrap;
-   color: white;
-   justify-content: space-between;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  color: white;
+  justify-content: space-between;
+  height: 10%;
+  width: 100%;
+  background: #005493;
 }
