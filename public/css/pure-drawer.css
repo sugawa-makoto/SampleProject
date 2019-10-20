@@ -33,6 +33,16 @@ body {
 
 body {
   margin: 0;
+  background: #fff;
+  color: #374c5d;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default;
 }
 
 /**************
@@ -4034,3 +4044,36 @@ Copyright (c) 2014 Daniel Eden
   animation-name: slideOutUp;
 }
 
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+.nav-primary li a:hover {
+    background-color: rgba(31, 192, 142, 0.8);
+}
+.nav-primary li a {
+    display: block;
+    color: #f0f0f0;
+    padding: 15px 15px;
+}
+.nav-primary {
+    margin: 0;
+    padding: 100px 0 0 0;
+    border-bottom: 1px solid #24323d;
+}
+a {
+    color: #d95843;
+    text-decoration: none;
+    line-height: inherit;
+}
+.nav-primary li {
+    border-top: 1px solid #24323d;
+    border-bottom: 1px solid #3f566a;
+}
+ul, ol, dl {
+    font-size: 1.125rem;
+}

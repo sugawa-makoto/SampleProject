@@ -61,7 +61,7 @@
    display: flex;
     -webkit-flex-flow: row nowrap;
    flex-flow: row nowrap;
-   width: 80%;
+   width: 100%;
 }
 
 .wrapper_day_time {
@@ -71,7 +71,7 @@
     margin-right: 20px;
    -webkit-flex-direction: column;
    flex-direction: column;
-   width: 100%;
+   width: 40%;
 }
 
 .all_wrapper {
