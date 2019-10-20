@@ -23,9 +23,7 @@
                 <div class="large-12 columns">
                     <ul class="nav-primary">
                         <li><a href="/pure-drawer">Home</a></li>
-                        <li><a href="/pure-drawer/documentation.html">Documentation</a></li>
-                        <li><a href="/pure-drawer/multiple.html">Demo Multiple Drawers</a></li>
-                        <li><a href="/pure-drawer/features">Planned Features</a></li>
+                        <li><a href="/pure-drawer/documentation.html">修正</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +63,7 @@
 		    var nowHour = set2digits(nowTime.getHours());
 		    var nowMin  = set2digits(nowTime.getMinutes());
 		    var nowSec  = set2digits(nowTime.getSeconds());
-		    var clock   = "<h1>" + nowHour + ":" + nowMin + "</h1>";
+		    var clock   = "<h1 class='size'>" + nowHour + ":" + nowMin + "</h1>";
 		    document.getElementById("clock").innerHTML = clock;
 		}
        setInterval('setClock()', 1000);
