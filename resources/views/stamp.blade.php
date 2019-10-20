@@ -44,7 +44,10 @@
 			 	<div class="all_wrapper">
 				 	<div class="wrapper_main">
 						<div class="wrapper_day_time">
-							<div class="day"><h1>{{$date2}}</h1></div>
+							<div class="wrapper_day_youbi">
+								<div class="day"><h1>{{$date2}}</h1></div>
+								<p id="youbi"></p>
+							</div>
 							<div id="clock"></div>
 						</div>
 							<div class="wrapper_select_button">
@@ -61,6 +64,13 @@
 	</div>
 <!-- ↑サイト表示領域とpure-drawer↑ -->
     <script>
+    	// 曜日の取得↓
+    	var now =new Date();
+    	var youbi = now.getDay();
+    	var weekday = ["（日）","（月）","（火）","（水）","（木）","（金）","（土）"];
+		document.getElementById('youbi').textContent = weekday[youbi];
+
+		// 年月日取得の処理↓
     	function set2digits(number) {
 		    if (number < 10) {
 		        return '0' + number;
