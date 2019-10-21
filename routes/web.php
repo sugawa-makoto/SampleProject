@@ -11,8 +11,18 @@
 |
 */
 
+Route::get('stamp', 'StampController@stamp' , function() {
+    // 認証済みのユーザーのみが入れる
+	return view('stamp');
+})->middleware('auth');
+
+
+
+
+
+
 Route::get('hello', 'HelloController@hello');
-Route::get('stamp', 'StampController@stamp');
+// Route::get('stamp', 'StampController@stamp');
 Route::get('request', 'RequestController@index');
 
 
