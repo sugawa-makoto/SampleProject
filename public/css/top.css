@@ -44,7 +44,16 @@
    width: 100%;
 }
 
+
+
 .wrapper_brand h1 {
+  font-size: 3rem;
+  margin-bottom:0.5rem;
+  color: #FFFFFF;
+  
+}
+
+.wrapper_brand h2 {
   font-size: 4rem;
   margin-bottom: 1em;
   color: #FFFFFF;

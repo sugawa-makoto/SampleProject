@@ -41,7 +41,8 @@
                     <div class="wrapper_main">
                         <div class="wrapper_contents">
                             <div class="wrapper_brand">
-                                <h1>I/O=>manager</h1>
+                                <h1>Welcome to</h1>
+                                <h2>I/O=>manager</h2>
                             </div>
                             <div class="wrapper_button">
                                 <div class="wrapper_button_login"><a href="http://127.0.0.1:8000/login" class="btn-gradient-flat_login">ログイン</a></div>
