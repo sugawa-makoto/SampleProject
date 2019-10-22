@@ -20,10 +20,14 @@ Route::get('stamp', 'StampController@stamp' , function() {
 
 
 
+Route::get('top', function () {
+    return view('top');
+});
 
-Route::get('hello', 'HelloController@hello');
-// Route::get('stamp', 'StampController@stamp');
-Route::get('request', 'RequestController@index');
+
+
+
+
 
 
 Route::get('/database', function() {
@@ -32,3 +36,5 @@ Route::get('/database', function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
