@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /*
@@ -26,7 +26,7 @@ class LoginController extends Controller
      * @var string
      */
     // 認証後のリダイレクト先
-    protected $redirectTo = '/top';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -35,12 +35,10 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('/top');
+        $this->middleware('guest')->except('logout');
     }
-
-        protected function loggedOut(Request $request)
+    protected function loggedOut(Request $request)
         {
-            return redirect(route('/top'));
+            return redirect('/top');
         }
-
 }
