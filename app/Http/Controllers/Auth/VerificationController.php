@@ -26,7 +26,7 @@ class VerificationController extends Controller
      * @var string
      */
     // 認証後のリダイレクト先
-    protected $redirectTo = '/top';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.

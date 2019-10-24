@@ -26,5 +26,5 @@ class ResetPasswordController extends Controller
      * @var string
      */
     // 認証後のリダイレクト先
-    protected $redirectTo = '/top';
+    protected $redirectTo = '/home';
 }
