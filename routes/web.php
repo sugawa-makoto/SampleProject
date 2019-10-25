@@ -24,7 +24,9 @@ Route::get('top', function () {
     return view('top');
 });
 
-
+Route::get('record', function () {
+    return view('record');
+});
 
 
 
