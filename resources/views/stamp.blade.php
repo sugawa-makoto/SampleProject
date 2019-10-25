@@ -58,6 +58,21 @@
 					</div>
 				</div>
 				<!-- ↑固有コンテンツ表示領域↑ -->
+
+
+
+
+				<form action="confirmation.php" method="post"><br />  
+		 			<input type="hidden" name="time" value="<?php echo '現在時刻は：'.date('Y/m/d H:i:s'); ?>" size="60">
+		            <input type="submit" value="出勤" />
+				</form>
+				<form action="confirmation.php" method="post"><br />  
+		 			<input type="hidden" name="time" value="<?php echo '現在時刻は：'.date('Y/m/d H:i:s'); ?>" size="60">
+		            <input type="submit" value="退勤" />
+				</form>
+
+
+
 	        </div>
 	    </div>
 	    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
