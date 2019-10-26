@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
-// これを付け加えたら遷移が自由にできるようになった
+// これを付け加えたら遷移が自由にできるようになった（ログアウトの遷移先の自由が効くようになった）
 use Illuminate\Http\Request;
 class LoginController extends Controller
 {
@@ -27,8 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // 認証後のリダイレクト先
-    // 認証後のリダイレクト先
+    
 
     /**
      * Create a new controller instance.
@@ -40,7 +39,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    // ログインしたら遷移するリダイレクト先（上の// 認証後のリダイレクト先より優先されます）
+    // ログインしたら遷移するリダイレクト先
     protected function redirectTo()
     {
         return '/stamp';
