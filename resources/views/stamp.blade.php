@@ -37,7 +37,7 @@
 					<div class="top_bar_brand">I/O=>manager</div>
 					<div class="top_bar_user">
 						<div class="top_bar_user_photo"><img src="https://nekogazou.com/wp-content/uploads/2013/09/140.jpg"></div>
-						<div class="top_bar_user_name">変数　須川</div>
+						<div class="top_bar_user_name">{{Auth::user()->name}}</div>
 					</div>
 				</div>
 				<!-- ↓固有コンテンツ表示領域↓ -->	

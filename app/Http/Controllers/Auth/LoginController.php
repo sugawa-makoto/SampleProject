@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+// これを付け加えたら遷移が自由にできるようになった
+use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     /*
@@ -45,7 +47,7 @@ class LoginController extends Controller
     }
     // ログアウトしたら遷移するリダイレクト先
     protected function loggedOut(Request $request)
-        {
-            return redirect('/home');
-        }
+    {
+        return redirect('/top');
+    }
 }

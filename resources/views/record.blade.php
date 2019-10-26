@@ -36,20 +36,15 @@
                 <div class="top_bar">
                     <div class="top_bar_brand">I/O=>manager</div>
                 </div>
-                <!-- ↓固有コンテンツ表示領域↓ -->  
+                <!-- ↓固有コンテンツ表示領域↓ -->
                 <div class="all_wrapper">
                 <table>
-  <tr>
-    <td>りんご</td>
-    <td>甘酸っぱい</td>
-    <td>おおむね赤</td>
-  </tr>
-  <tr>
-    <td>なつみかん</td>
-    <td>かなり酸っぱいと思う</td>
-    <td>たいてい黄色</td>
-  </tr>
-</table>
+                    @foreach($data as $item)
+                    <tr>
+                        <td>{{$item}}</td>
+                    </tr>
+                    @endforeach
+                    </table>
                 </div>
                 <!-- ↑固有コンテンツ表示領域↑ -->
             </div>

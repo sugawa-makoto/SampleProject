@@ -17,18 +17,11 @@ Route::get('stamp', 'StampController@stamp' , function() {
 })->middleware('auth');
 
 
-
-
-
 Route::get('top', function () {
     return view('top');
 });
 
-Route::get('record', function () {
-    return view('record');
-});
-
-
+Route::get('/record', 'RecordController@record')->name('record');
 
 
 
