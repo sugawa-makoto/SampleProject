@@ -39,9 +39,9 @@
                 <!-- ↓固有コンテンツ表示領域↓ -->
                 <div class="all_wrapper">
                 <table>
-                    @foreach($data as $item)
+                    @foreach($data as $d)
                     <tr>
-                        <td>{{$item}}</td>
+                        <td>{{$d->user_id}}</td>
                     </tr>
                     @endforeach
                     </table>

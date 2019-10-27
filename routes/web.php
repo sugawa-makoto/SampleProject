@@ -22,6 +22,7 @@ Route::get('top', function () {
 });
 
 Route::get('/record', 'RecordController@record')->name('record');
+Route::get('record', 'RecordController@model');
 
 
 
