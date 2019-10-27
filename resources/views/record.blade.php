@@ -42,6 +42,9 @@
                     @foreach($data as $d)
                     <tr>
                         <td>{{$d->user_id}}</td>
+                        <td>{{$d->start_time}}</td>
+                        <td>{{$d->end_time}}</td>
+                        <td>{{$d->today}}</td>
                     </tr>
                     @endforeach
                     </table>
