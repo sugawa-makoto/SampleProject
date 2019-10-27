@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 // 何を使うか調べる↓
 use App\Models\Working_days;
-// use Illuminate\Http\Request\Working_days;
+
 
 class RecordController extends Controller {
     public function model()
@@ -17,13 +17,6 @@ class RecordController extends Controller {
       // ビューを返す
       return view('record', ['data' => $data]);
     }
-
-
-
-
-
-
-
     // public function record(){
 
     //     //月初から月末の間をforeach
@@ -31,5 +24,4 @@ class RecordController extends Controller {
     //     // recordと$dataを持ってbladeに行く事ができる↓
     //     return view('record', ['data' => $data]);
     // }
-    
 }
