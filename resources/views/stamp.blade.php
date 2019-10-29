@@ -57,11 +57,33 @@
 							</div>
 					</div>
 				</div>
+
+
+				<!-- ~~~~~~~~~~~~~お試し -->
+				<div class="button-form">
+                        <ul>
+                            <li>
+                                <form action="{{ route('stamp/punchin') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <button type="submit" class="btn btn-primary">出勤</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{{ route('stamp/punchout') }}" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <button type="submit" class="btn btn-success">退勤</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+					<!-- ~~~~~~~~~~~~~お試し -->
 				<!-- ↑固有コンテンツ表示領域↑ -->
 
 
 
-
+				<!-- ~~~~~~~~~~~~~お試し -->
 				<form action="confirmation.php" method="post"><br />  
 		 			<input type="hidden" name="time" value="<?php echo '現在時刻は：'.date('Y/m/d H:i:s'); ?>" size="60">
 		            <input type="submit" value="出勤" />
@@ -70,7 +92,7 @@
 		 			<input type="hidden" name="time" value="<?php echo '現在時刻は：'.date('Y/m/d H:i:s'); ?>" size="60">
 		            <input type="submit" value="退勤" />
 				</form>
-
+				<!-- ~~~~~~~~~~~~~お試し -->
 
 
 	        </div>

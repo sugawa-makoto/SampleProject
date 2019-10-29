@@ -38,6 +38,7 @@
                 </div>
                 <!-- ↓固有コンテンツ表示領域↓ -->
                 <div class="all_wrapper">
+                
                 <table>
                     @foreach($data as $d)
                     <tr>
