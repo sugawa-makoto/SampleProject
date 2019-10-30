@@ -11,19 +11,11 @@
 |
 */
 
-Route::get('stamp', 'StampController@stamp' , function() {
-    // 認証済みのユーザーのみが入れる
-	return view('stamp');
-})->middleware('auth');
-
-
-Route::get('top', function () {
-    return view('top');
-});
-
-Route::get('/record', 'RecordController@record')->name('record');
+Route::get('stamp', 'StampController@stamp');
+Route::get('top', 'TopController@top');
+Route::get('record', 'RecordController@record')->name('record');
 Route::get('record', 'RecordController@model');
-
+Route::get('home', 'HomeController@index')->name('home');
 
 
 Route::get('/database', function() {
@@ -31,6 +23,6 @@ Route::get('/database', function() {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 

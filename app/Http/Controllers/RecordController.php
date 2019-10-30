@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 // use Illuminate\Http\Request;
 // 何を使うか調べる↓
 use App\Models\Working_days;
-
+use Illuminate\Http\Request;
 
 class RecordController extends Controller {
     public function model()
