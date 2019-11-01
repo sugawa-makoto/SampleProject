@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('stamp', 'StampController@stamp');
-Route::get('top', 'TopController@top');
-Route::get('record', 'RecordController@record')->name('record');
-Route::get('record', 'RecordController@model');
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('/stamp', 'StampController@stamp');
+Route::post('/stamp_in', 'StampController@in');
+Route::post('/stamp_out', 'StampController@out');
+Route::get('/top', 'TopController@top');
+// 同じURL接続だけどいいのかな？？？↓
+Route::get('/record', 'RecordController@record')->name('record');
+Route::get('/record', 'RecordController@model');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/database', function() {

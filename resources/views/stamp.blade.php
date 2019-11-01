@@ -40,7 +40,25 @@
 						<div class="top_bar_user_name">{{Auth::user()->name}}</div>
 					</div>
 				</div>
-				<!-- ↓固有コンテンツ表示領域↓ -->	
+				<!-- ↓固有コンテンツ表示領域↓ -->
+				<!-- ↓試験コンテンツ表示領域↓ -->
+				<!-- ボタンだけ表示させて、内容はControllerで決めて遷移先に表示する書き方
+				textareaは実質不要だが経緯が分かるように表示しているだけ。 -->
+				<form action="{{ url('/stamp_in')}}" method="POST" class="form-horizontal">
+  					{{ csrf_field() }}
+					<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+					<button type="submit" name="add">
+						出勤
+					</button>
+				</form>
+				<form action="{{ url('/stamp_out')}}" method="POST" class="form-horizontal">
+  					{{ csrf_field() }}
+					<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+					<button type="submit" name="add">
+						退勤
+					</button>
+				</form>
+				<!-- ↑試験コンテンツ表示領域↑ -->	
 			 	<div class="all_wrapper">
 				 	<div class="wrapper_main">
 						<div class="wrapper_day_time">
