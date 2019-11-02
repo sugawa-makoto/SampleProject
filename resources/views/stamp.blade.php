@@ -41,24 +41,7 @@
 					</div>
 				</div>
 				<!-- ↓固有コンテンツ表示領域↓ -->
-				<!-- ↓試験コンテンツ表示領域↓ -->
-				<!-- ボタンだけ表示させて、内容はControllerで決めて遷移先に表示する書き方
-				textareaは実質不要だが経緯が分かるように表示しているだけ。 -->
-				<form action="{{ url('/stamp_in')}}" method="POST" class="form-horizontal">
-  					{{ csrf_field() }}
-					<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-					<button type="submit" name="add">
-						出勤
-					</button>
-				</form>
-				<form action="{{ url('/stamp_out')}}" method="POST" class="form-horizontal">
-  					{{ csrf_field() }}
-					<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-					<button type="submit" name="add">
-						退勤
-					</button>
-				</form>
-				<!-- ↑試験コンテンツ表示領域↑ -->	
+
 			 	<div class="all_wrapper">
 				 	<div class="wrapper_main">
 						<div class="wrapper_day_time">
@@ -69,8 +52,20 @@
 							<div id="clock"></div>
 						</div>
 							<div class="wrapper_select_button">
-								<a href="#" class="btn-circle-border-simple_in">出勤</a>
-								<a href="#" class="btn-circle-border-simple_out">退勤</a>
+								<form action="{{ url('/stamp_in')}}" method="POST" class="form-horizontal">
+									{{ csrf_field() }}
+									<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+									<button type="submit" name="add" class="btn-circle-border-simple_in">
+										出勤
+									</button>
+								</form>
+								<form action="{{ url('/stamp_out')}}" method="POST" class="form-horizontal">
+									{{ csrf_field() }}
+									<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+									<button type="submit" name="add" class="btn-circle-border-simple_out">
+										退勤
+									</button>
+								</form>
 								<a href="#" class="btn-circle-border-simple_list">勤務実績</a>
 							</div>
 					</div>
@@ -80,15 +75,7 @@
 
 
 
-				<form action="confirmation.php" method="post"><br />  
-		 			<input type="hidden" name="time" value="<?php echo '現在時刻は：'.date('Y/m/d H:i:s'); ?>" size="60">
-		            <input type="submit" value="出勤" />
-				</form>
-				<form action="confirmation.php" method="post"><br />  
-		 			<input type="hidden" name="time" value="<?php echo '現在時刻は：'.date('Y/m/d H:i:s'); ?>" size="60">
-		            <input type="submit" value="退勤" />
-				</form>
-
+			
 
 
 	        </div>
