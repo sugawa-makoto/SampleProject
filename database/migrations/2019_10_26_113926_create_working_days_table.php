@@ -17,8 +17,8 @@ class CreateWorkingDaysTable extends Migration
         Schema::create('working_days', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->datetime('start_time');
-            $table->datetime('end_time');
+            $table->datetime('start_time') ->nullable();
+            $table->datetime('end_time') ->nullable();
             $table->datetime('today');
             $table->timestamps();
         });

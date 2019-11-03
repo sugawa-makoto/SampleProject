@@ -19,10 +19,11 @@ class StampController extends Controller {
 		$record = new Working_days;
 		$record->user_id = Auth::id();
 		$record->start_time = "2019-11-02 10:00:00";
-		
+		// $record->end_time = "2019-11-02 18:00:00";
 		$record->today = "2019-11-02 00:00:00";
 		$record->save();
-		dd("かんりょう");
+		// dd("かんりょう");
+		return redirect('/stamp');
 	}
 	public function out(){
 		dd("退勤ボタンが押されました");
