@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Working_days;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class StampController extends Controller {
     public function stamp(){
@@ -18,23 +19,29 @@ class StampController extends Controller {
 	public function in(){
 		$record = new Working_days;
 		$record->user_id = Auth::id();
-		$record->start_time = "2019-11-02 10:00:00";
-		$record->end_time = "2019-11-02 18:00:00";
-		$record->today = "2019-11-02 00:00:00";
+		$record->start_time = Carbon::now();
+		// $record->end_time = "2019-11-02 18:00:00";
+		$record->today = Carbon::today();
 		$record->save();
-		// dd("かんりょう");
+		// dd($p);
 		return redirect('/stamp');
 	}
 	public function out(){
 		$record = new Working_days;
 		$record->user_id = Auth::id();
 		// $record->start_time = "2019-11-02 10:00:00";
-		$record->end_time = "2019-11-02 18:00:00";
-		$record->today = "2019-11-02 00:00:00";
-		$record->save();
-		// dd("かんりょう");
+		// $record->end_time = "2019-11-02 18:00:00";
+		$record->today = Carbon::today();
+		
+		
+		$p = working_days::where('today', $record->today)->latest()->first()->id;
+		$update = working_days::find($p);
+		$update->end_time = Carbon::now();
+		$update->save();
 		return redirect('/stamp');
-		dd("退勤ボタンが押されました");
+		// dd($flight);
+		// return redirect('/stamp');
+		// dd("退勤ボタンが押されました");
 	}
 	// コントローラのコンストラクターでmiddlewareメソッドを呼び出す（ログイン後でないとstampに行けない）
 	public function __construct()
