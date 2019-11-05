@@ -28,13 +28,13 @@ class StampController extends Controller {
 	}
 	public function out(){
 		$record = new Working_days;
-		$record->user_id = Auth::id();
+		// $record->user_id = Auth::id();
 		// $record->start_time = "2019-11-02 10:00:00";
 		// $record->end_time = "2019-11-02 18:00:00";
 		$record->today = Carbon::today();
 		
 		
-		$p = working_days::where('today', $record->today)->latest()->first()->id;
+		$p = working_days::where('today', '=', $record->today)->latest()->first()->id;
 		$update = working_days::find($p);
 		$update->end_time = Carbon::now();
 		$update->save();
