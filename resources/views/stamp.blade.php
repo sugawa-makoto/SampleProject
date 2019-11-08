@@ -40,9 +40,16 @@
 						<div class="top_bar_user_name">{{Auth::user()->name}}</div>
 					</div>
 				</div>
+
 				<!-- ↓固有コンテンツ表示領域↓ -->
 
 			 	<div class="all_wrapper">
+					<!-- フラッシュメッセージ -->
+					@if (session('flash_message'))
+						<div class="flash_message">
+							{{ session('flash_message') }}
+						</div>
+					@endif
 				 	<div class="wrapper_main">
 						<div class="wrapper_day_time">
 							<div class="wrapper_day_youbi">
@@ -108,6 +115,10 @@
        setInterval('setClock()', 1000);
     </script>
 <!-- ↑時計表示用スクリプト↑ -->
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -17,28 +17,32 @@ class StampController extends Controller {
 		]);
 	}
 	public function in(){
+		// テーブルを指定
 		$record = new Working_days;
 		$record->user_id = Auth::id();
 		$record->start_time = Carbon::now();
 		// $record->end_time = "2019-11-02 18:00:00";
 		$record->today = Carbon::today();
+	
+		
 		$record->save();
 		// dd($p);
 		return redirect('/stamp');
 	}
 	public function out(){
+		// テーブルを指定
 		$record = new Working_days;
 		// $record->user_id = Auth::id();
 		// $record->start_time = "2019-11-02 10:00:00";
 		// $record->end_time = "2019-11-02 18:00:00";
 		$record->today = Carbon::today();
 		
-		
+
 		$p = working_days::where('today', '=', $record->today)->latest()->first()->id;
 		$update = working_days::find($p);
 		$update->end_time = Carbon::now();
 		$update->save();
-		return redirect('/stamp');
+		return redirect('/stamp')->with('flash_message', '投稿が完了しました');
 		// dd($flight);
 		// return redirect('/stamp');
 		// dd("退勤ボタンが押されました");
