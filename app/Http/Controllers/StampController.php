@@ -17,35 +17,59 @@ class StampController extends Controller {
 		]);
 	}
 	public function in(){
+		// 早期リターン
+		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->exists();
+		if ($existsWorkingDays) {
+			return redirect('/stamp')->with('flash_message', '出勤済みなので登録できません！');
+		} 
+
 		// テーブルを指定
 		$record = new Working_days;
 		$record->user_id = Auth::id();
 		$record->start_time = Carbon::now();
-		// $record->end_time = "2019-11-02 18:00:00";
 		$record->today = Carbon::today();
-	
 		
 		$record->save();
-		// dd($p);
-		return redirect('/stamp');
+		return redirect('/stamp')->with('flash_message', '出勤が完了しました');
 	}
+
+
+
+
+
+
+
+
+
 	public function out(){
-		// テーブルを指定
+		// 早期リターン
+		// $existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->latest()->first()->end_time;
+		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->whereNotNull('end_time')->exists();
+		
+		if ($existsWorkingDays) {
+			return redirect('/stamp')->with('flash_message', '退勤済みなので登録できません！');
+		} 
+
+		// 出勤の打刻情報がある場合
+		$workingDay = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->first();
+		if ($workingDay) {
+		// 出勤時にend_timeカラムがnullable()になっているので更新してあげます↓
+		$workingDay->end_time = Carbon::now();
+		$workingDay->save();
+		return redirect('/stamp')->with('flash_message', 'お疲れさまでした！！');
+		}
+		
+		
+		// 出勤の打刻情報がない場合（trueでない時）
 		$record = new Working_days;
-		// $record->user_id = Auth::id();
+		$record->user_id = Auth::id();
 		// $record->start_time = "2019-11-02 10:00:00";
-		// $record->end_time = "2019-11-02 18:00:00";
+		$record->end_time = Carbon::now();
 		$record->today = Carbon::today();
+		$record->save();
+		return redirect('/stamp')->with('flash_message', 'お疲れさまでした');
 		
 
-		$p = working_days::where('today', '=', $record->today)->latest()->first()->id;
-		$update = working_days::find($p);
-		$update->end_time = Carbon::now();
-		$update->save();
-		return redirect('/stamp')->with('flash_message', '投稿が完了しました');
-		// dd($flight);
-		// return redirect('/stamp');
-		// dd("退勤ボタンが押されました");
 	}
 	// コントローラのコンストラクターでmiddlewareメソッドを呼び出す（ログイン後でないとstampに行けない）
 	public function __construct()
