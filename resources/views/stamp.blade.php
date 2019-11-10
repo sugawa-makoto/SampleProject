@@ -45,7 +45,7 @@
 				
 			 	<div class="all_wrapper">
 					<!-- フラッシュメッセージ -->
-					<input type="button" onload="view()" value="アラート">
+					<input type="button" onclick="view()" value="アラート">
 					<div class="wrapper_message">
 						@if (session('flash_message'))
 							<div class="flash_message">
