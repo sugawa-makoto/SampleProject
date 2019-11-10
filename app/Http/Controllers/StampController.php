@@ -16,6 +16,7 @@ class StampController extends Controller {
 		"time2" => $time2,
 		]);
 	}
+	// 出勤ボタン処理↓
 	public function in(){
 		// 早期リターン
 		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->exists();
@@ -35,17 +36,10 @@ class StampController extends Controller {
 
 
 
-
-
-
-
-
-
+	// 退勤ボタン処理↓
 	public function out(){
 		// 早期リターン
-		// $existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->latest()->first()->end_time;
 		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->whereNotNull('end_time')->exists();
-		
 		if ($existsWorkingDays) {
 			return redirect('/stamp')->with('flash_message', '退勤済みなので登録できません！');
 		} 

@@ -13,11 +13,10 @@
  <body>
  <!-- ↓サイト表示領域とpure-drawer↓ -->
 	<div class="pure-container" data-effect="pure-effect-slide">
-    <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
-    <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
-        <span class="pure-toggle-icon"></span>
-    </label>
-
+		<input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
+		<label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
+			<span class="pure-toggle-icon"></span>
+		</label>
 	    <div class="pure-drawer" data-position="left">
 	        <!-- ↓pure-drawerハンバーガーメニューの中身↓ -->
 			<div class="row collapse">
@@ -45,11 +44,13 @@
 
 			 	<div class="all_wrapper">
 					<!-- フラッシュメッセージ -->
-					@if (session('flash_message'))
-						<div class="flash_message">
-							{{ session('flash_message') }}
-						</div>
-					@endif
+					<div class="wrapper_message">
+						@if (session('flash_message'))
+							<div class="flash_message">
+								{{ session('flash_message') }}
+							</div>
+						@endif
+					</div>
 				 	<div class="wrapper_main">
 						<div class="wrapper_day_time">
 							<div class="wrapper_day_youbi">
@@ -58,33 +59,26 @@
 							</div>
 							<div id="clock"></div>
 						</div>
-							<div class="wrapper_select_button">
-								<form action="{{ url('/stamp_in')}}" method="POST" class="form-horizontal">
-									{{ csrf_field() }}
-									<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-									<button type="submit" name="add" class="btn-circle-border-simple_in">
-										出勤
-									</button>
-								</form>
-								<form action="{{ url('/stamp_out')}}" method="POST" class="form-horizontal">
-									{{ csrf_field() }}
-									<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-									<button type="submit" name="add" class="btn-circle-border-simple_out">
-										退勤
-									</button>
-								</form>
-								<a href="#" class="btn-circle-border-simple_list">勤務実績</a>
-							</div>
+						<div class="wrapper_select_button">
+							<form action="{{ url('/stamp_in')}}" method="POST" class="form-horizontal">
+								{{ csrf_field() }}
+								<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+								<button type="submit" name="add" class="btn-circle-border-simple_in">
+									出勤
+								</button>
+							</form>
+							<form action="{{ url('/stamp_out')}}" method="POST" class="form-horizontal">
+								{{ csrf_field() }}
+								<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+								<button type="submit" name="add" class="btn-circle-border-simple_out">
+									退勤
+								</button>
+							</form>
+							<a href="#" class="btn-circle-border-simple_list">勤務実績</a>
+						</div>
 					</div>
 				</div>
 				<!-- ↑固有コンテンツ表示領域↑ -->
-
-
-
-
-			
-
-
 	        </div>
 	    </div>
 	    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
@@ -115,8 +109,6 @@
        setInterval('setClock()', 1000);
     </script>
 <!-- ↑時計表示用スクリプト↑ -->
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
