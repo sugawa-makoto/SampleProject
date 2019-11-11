@@ -39,12 +39,18 @@
                 <!-- ↓固有コンテンツ表示領域↓ -->
                 <div class="all_wrapper">
                 <table>
-                    @foreach($data as $d)
                     <tr>
-                        <td>{{$d->user_id}}</td>
+                        <th>出勤時間</th>
+                        <th>退勤時間</th>
+                    </tr>
+                    @foreach($data as $d)
+
+                    <tr>
+                        <!-- <td>{{$d->id}}</td> -->
+                        <!-- <td>{{$d->user_id}}</td> -->
                         <td>{{$d->start_time}}</td>
                         <td>{{$d->end_time}}</td>
-                        <td>{{$d->today}}</td>
+                        <!-- <td>{{$d->today}}</td> -->
                     </tr>
                     @endforeach
                     </table>
