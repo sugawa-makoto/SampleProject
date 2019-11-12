@@ -47,7 +47,7 @@
 					<!-- フラッシュメッセージ -->
 					<div class="wrapper_message">
 						@if (session('flash_message'))
-							<div class="flash_message">
+							<div id='hideMe'>
 								{{ session('flash_message') }}
 							</div>
 						@endif
