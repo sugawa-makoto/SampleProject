@@ -54,6 +54,23 @@
                     </tr>
                     @endforeach
                     </table>
+
+                    <table>
+                    <tr>
+                        <th>出勤時間</th>
+                        <th>退勤時間</th>
+                    </tr>
+                    @foreach($yasumi_data as $y)
+
+                    <tr>
+                        <!-- <td>{{$d->id}}</td> -->
+                        <!-- <td>{{$d->user_id}}</td> -->
+                        <td>{{$y->yasumi_name}}</td>
+                        <td>{{$y->yasumi_day}}</td>
+                        <!-- <td>{{$d->today}}</td> -->
+                    </tr>
+                    @endforeach
+                    </table>
                 </div>
                 <!-- ↑固有コンテンツ表示領域↑ -->
             </div>
