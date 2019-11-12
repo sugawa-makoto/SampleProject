@@ -75,7 +75,7 @@
 									退勤
 								</button>
 							</form>
-							<a href="#" class="btn-circle-border-simple_list">勤務実績</a>
+							<a href="/record" class="btn-circle-border-simple_list">勤務実績</a>
 						</div>
 					</div>
 				</div>
