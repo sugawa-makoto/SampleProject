@@ -20,6 +20,8 @@ class CreateWorkingDaysTable extends Migration
             $table->datetime('start_time') ->nullable();
             $table->datetime('end_time') ->nullable();
             $table->datetime('today');
+            $table->string('yasumi_name') ->nullable();
+            $table->date('yasumi_day') ->nullable();
             $table->timestamps();
         });
     }

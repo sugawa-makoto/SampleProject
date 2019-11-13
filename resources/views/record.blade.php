@@ -40,6 +40,8 @@
                 <div class="all_wrapper">
                 <table>
                     <tr>
+                        <th>日付</th>
+                        <th>休日表示</th>
                         <th>出勤時間</th>
                         <th>退勤時間</th>
                     </tr>
@@ -48,29 +50,14 @@
                     <tr>
                         <!-- <td>{{$d->id}}</td> -->
                         <!-- <td>{{$d->user_id}}</td> -->
+                        <td>{{$d->today}}</td>
+                        <td>{{$d->yasumi_name}}</td>
                         <td>{{$d->start_time}}</td>
                         <td>{{$d->end_time}}</td>
-                        <!-- <td>{{$d->today}}</td> -->
                     </tr>
                     @endforeach
                     </table>
-
-                    <table>
-                    <tr>
-                        <th>出勤時間</th>
-                        <th>退勤時間</th>
-                    </tr>
-                    @foreach($yasumi_data as $y)
-
-                    <tr>
-                        <!-- <td>{{$d->id}}</td> -->
-                        <!-- <td>{{$d->user_id}}</td> -->
-                        <td>{{$y->yasumi_name}}</td>
-                        <td>{{$y->yasumi_day}}</td>
-                        <!-- <td>{{$d->today}}</td> -->
-                    </tr>
-                    @endforeach
-                    </table>
+                    
                 </div>
                 <!-- ↑固有コンテンツ表示領域↑ -->
             </div>

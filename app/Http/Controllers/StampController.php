@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Working_days;
+use App\Models\Yasumi;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use \Yasumi\Yasumi;
+
 
 class StampController extends Controller {
     public function stamp(){
@@ -24,15 +25,31 @@ class StampController extends Controller {
 		if ($existsWorkingDays) {
 			return redirect('/stamp')->with('flash_message', '出勤済みなので登録できません！');
 		} 
-
+		$yasumi = Yasumi::where('yasumi_day','2019-11-12 00:00:00')->first();
+		if (!$yasumi) {
 		// テーブルを指定
 		$record = new Working_days;
+		// $record->yasumi_day = "$yasumi->yasumi_day";
+		// $record->yasumi_name = "$yasumi->yasumi_name";
 		$record->user_id = Auth::id();
 		$record->start_time = Carbon::now();
 		$record->today = Carbon::today();
 		
 		$record->save();
 		return redirect('/stamp')->with('flash_message', '出勤が完了しました');
+		}
+		if ($yasumi) {
+		// テーブルを指定
+		$record = new Working_days;
+		$record->yasumi_day = "$yasumi->yasumi_day";
+		$record->yasumi_name = "$yasumi->yasumi_name";
+		$record->user_id = Auth::id();
+		$record->start_time = Carbon::now();
+		$record->today = Carbon::today();
+		
+		$record->save();
+		return redirect('/stamp')->with('flash_message', '出勤が完了しました');
+		}
 	}
 
 

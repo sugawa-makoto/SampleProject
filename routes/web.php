@@ -18,7 +18,7 @@ Route::get('/top', 'TopController@top');
 // 同じURL接続だけどいいのかな？？？↓
 Route::get('/record', 'RecordController@record')->name('record');
 Route::get('/record', 'RecordController@model');
-Route::get('/record', 'RecordController@yasumi_model');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
