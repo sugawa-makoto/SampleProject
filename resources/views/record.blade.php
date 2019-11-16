@@ -46,11 +46,10 @@
                         <th>退勤時間</th>
                     </tr>
                     @foreach($data as $d)
-
                     <tr>
                         <!-- <td>{{$d->id}}</td> -->
                         <!-- <td>{{$d->user_id}}</td> -->
-                        <td>{{$d->today}}</td>
+                        <td>{{ Carbon\Carbon::parse($d->today)->formatLocalized("%Y年%m月%d日")}}</td>
                         <td>{{$d->yasumi_name}}</td>
                         <td>{{$d->start_time}}</td>
                         <td>{{$d->end_time}}</td>
