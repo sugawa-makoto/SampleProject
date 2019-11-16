@@ -21,6 +21,17 @@ class StampController extends Controller {
 	}
 	// 出勤ボタン処理↓
 	public function in(){
+
+		// $dt = Carbon::now();
+		// $dtmm = $dt->daysInMonth;//今月の日数
+  
+		// $dtmmdata = [];
+		// for ($i=1; $i <= $dtmm; $i++) {
+		//   $dtmmdata[] = ['day_no' => $i];
+		// }
+		// $cli = DB::table('Working_days')
+
+		-> insert($dtmmdata);
 		// 早期リターン
 		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->exists();
 		if ($existsWorkingDays) {
