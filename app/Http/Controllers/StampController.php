@@ -22,50 +22,22 @@ class StampController extends Controller {
 	// 出勤ボタン処理↓
 	public function in(){
 
-		// $dt = Carbon::now();
-		// $dtmm = $dt->daysInMonth;//今月の日数
-  
-		// $dtmmdata = [];
-		// for ($i=1; $i <= $dtmm; $i++) {
-		//   $dtmmdata[] = ['day_no' => $i];
-		// }
-		// $cli = DB::table('Working_days')
-
-		-> insert($dtmmdata);
 		// 早期リターン
 		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->exists();
 		if ($existsWorkingDays) {
 			return redirect('/stamp')->with('flash_message', '出勤済みなので登録できません！');
 		} 
-		$yasumi = Yasumi::where('yasumi_day','2019-11-12 00:00:00')->first();
-		if (!$yasumi) {
+		
 		$formatted_date = Carbon::today()->format("y年m月d日");
 		// テーブルを指定
 		$record = new Working_days;
-		// $record->yasumi_day = "$yasumi->yasumi_day";
-		// $record->yasumi_name = "$yasumi->yasumi_name";
 		$record->user_id = Auth::id();
 		$record->start_time = Carbon::now();
 		$record->today = Carbon::today();
 		
 		$record->save();
 		return redirect('/stamp')->with('flash_message', '出勤が完了しました');
-		}
-		if ($yasumi) {
-		// テーブルを指定
-		$record = new Working_days;
-		$record->yasumi_day = "$yasumi->yasumi_day";
-		$record->yasumi_name = "$yasumi->yasumi_name";
-		$record->user_id = Auth::id();
-		$record->start_time = Carbon::now();
-		$record->today = Carbon::today();
-		
-		$record->save();
-		return redirect('/stamp')->with('flash_message', '出勤が完了しました');
-		}
 	}
-
-
 
 	// 退勤ボタン処理↓
 	public function out(){

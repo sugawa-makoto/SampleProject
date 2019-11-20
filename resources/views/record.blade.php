@@ -23,8 +23,9 @@
             <div class="row collapse">
                 <div class="large-12 columns">
                     <ul class="nav-primary">
-                        <li><a href="/pure-drawer">Home</a></li>
-                        <li><a href="/pure-drawer/documentation.html">修正</a></li>
+                    <li><a href="/home">Home</a></li>
+                        <li><a href="/stamp">修正</a></li>
+						<li><a href="/onsite_select">現場管理</a></li>
                     </ul>
                 </div>
             </div>

@@ -14,8 +14,17 @@
 Route::get('/stamp', 'StampController@stamp');
 Route::post('/stamp_in', 'StampController@in');
 Route::post('/stamp_out', 'StampController@out');
+
+Route::get('/onsite_select', 'OnsiteController@select');
+// フォームアクセス時のルーティング
+Route::get('/onsite_form', 'OnsiteController@index');
+// フォーム送信時のルーティング
+Route::post('/onsite_form', 'OnsiteController@receiveData');
+Route::get('/onsite_list', 'OnsiteController@list');
+
+
 Route::get('/top', 'TopController@top');
-// 同じURL接続だけどいいのかな？？？↓
+
 Route::get('/record', 'RecordController@record')->name('record');
 Route::get('/record', 'RecordController@model');
 

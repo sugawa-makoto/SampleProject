@@ -5,7 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>I/OM=>manager_stamp</title>
    <meta name="viewport" content="width=device-width,initial-scale=1">
-   <link rel="stylesheet" href="css/top.css">
+   <link rel="stylesheet" href="css/onsite_list.css">
    <link rel="stylesheet" href="css/pure-drawer.css">
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
  </head>
@@ -23,7 +23,7 @@
             <div class="row collapse">
                 <div class="large-12 columns">
                     <ul class="nav-primary">
-                        <li><a href="/home">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                         <li><a href="/stamp">修正</a></li>
 						<li><a href="/onsite_select">現場管理</a></li>
                     </ul>
@@ -37,21 +37,36 @@
                 <div class="top_bar">
                     <div class="top_bar_brand">I/O=>manager</div>
                 </div>
-                <!-- ↓固有コンテンツ表示領域↓ -->  
+                <!-- ↓固有コンテンツ表示領域↓ -->
                 <div class="all_wrapper">
-                    <div class="wrapper_main">
-                        <div class="wrapper_contents">
-                            <div class="wrapper_brand">
-                                <h1>Welcome to</h1>
-                                <h2>I/O=>manager</h2>
-                            </div>
-                            <div class="wrapper_button">
-                                <div class="wrapper_button_login"><a href="http://127.0.0.1:8000/login" class="btn-gradient-flat_login">ログイン</a></div>
-                                <div class="wrapper_button_sign_up"><a href="http://127.0.0.1:8000/register" class="btn-gradient-flat_sign_up">新規登録</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <thead class="head">
+                    <tr>
+                        <th>日付</th>
+                        <th>現場名</th>
+                        <th>天気</th>
+                        <th>温度</th>
+                        <th>湿度</th>
+                        <th>施工タイトル</th>
+                        <th>施工詳細</th>
+                        <th>人数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($data as $d)
+                    <tr>
+                        <td class="created_at">{{ Carbon\Carbon::parse($d->created_at)->formatLocalized("%Y年%m月%d日")}}</td>
+                        <td class="onsite_name">{{$d->onsite_name}}</td>
+                        <td class="weather">{{$d->weather}}</td>
+                        <td class="temperature">{{$d->temperature}}</td>
+                        <td class="humidity">{{$d->humidity}}</td>
+                        <td class="work_title">{{$d->work_title}}</td>
+                        <td class="work_detail">{{$d->work_detail}}</td>
+                        <td class="people">{{$d->people}}</td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                    </table>
                 <!-- ↑固有コンテンツ表示領域↑ -->
             </div>
         </div>
@@ -60,9 +75,9 @@
 <!-- ↑サイト表示領域とpure-drawer↑ -->
     <script>
 
+        
     </script>
 <!-- ↑時計表示用スクリプト↑ -->
-
 
 
 
