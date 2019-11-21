@@ -15,6 +15,9 @@ Route::get('/stamp', 'StampController@stamp');
 Route::post('/stamp_in', 'StampController@in');
 Route::post('/stamp_out', 'StampController@out');
 
+Route::get('test', 'YasumiController@yasumi');
+Route::get('test', 'YasumiController@days_30');
+
 Route::get('/onsite_select', 'OnsiteController@select');
 // フォームアクセス時のルーティング
 Route::get('/onsite_form', 'OnsiteController@index');

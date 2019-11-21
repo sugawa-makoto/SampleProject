@@ -8,7 +8,7 @@
 }
 
 table{
-    width: 80%;
+    width: 95%;
     border-collapse:separate;
     border-spacing: 0;
     margin-top: 20px;
@@ -56,7 +56,7 @@ table{
   
   table tr:last-child td:last-child {
     border-radius: 0 0 5px 0;
-  } */
+  } *
   
   * {
       margin:0;
@@ -85,11 +85,16 @@ table{
       color: #A9A9A9;
     }
     /*-----コンテンツ領域-----*/
-    .all_wrapper {
+    .all_wrapper_onsite_list {
        
-        display: flex;
-        justify-content: center; /*左右中央揃え*/
-        /* align-items: center;     上下中央揃え */
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      /* height: 100%; */
+      /* -webkit-flex-direction: column; */
+      /* flex-direction: column;    上下中央揃え */
     
         background: #23374D;
     }

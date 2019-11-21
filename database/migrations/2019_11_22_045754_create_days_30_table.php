@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYasumiTable extends Migration
+class CreateDays30Table extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateYasumiTable extends Migration
      */
     public function up()
     {
-        Schema::create('yasumi', function (Blueprint $table) {
+        Schema::create('days_30', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('yasumi_name');
-            $table->date('yasumi_day');
-            $table->string('day_30') ->nullable();
+            $table->integer('days');
+            $table->integer('now_month');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateYasumiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('yasumi');
+        Schema::dropIfExists('days_30');
     }
 }
