@@ -18,13 +18,19 @@ class RecordController extends Controller {
     $carbon_month = $carbon->month; //今月(11) しっかり更新されます
 
     $calendar = calendar::where('year',$carbon_year)->where('month',$carbon_month)->get();// 今月分の日数の羅列を取得しています。
+    
     $working_days = working_days::where('user_id',Auth::id())->where('year',$carbon_year)->where('month',$carbon_month)->get();
-    $day = ($working_days->first());
+    
     if($calendar->isEmpty()){
       // TODO 早期リターンで違うVIEWに飛ばす（データが見つかりません的な、４０４みたいな）
       return view('welcome');
     }
+    $calendar_search = calendar::where('year',$carbon_year)->where('month',$carbon_month)->exists();
+    
+  
+    
+    
     return view('record',compact('calendar','working_days'));
+    
   }
-
 }

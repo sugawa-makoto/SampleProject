@@ -55,9 +55,16 @@
 					@foreach($working_days as $w)
                     <tr>
                         <td>{{$c->month.'月'.$c->day.'日'}}</td>
-						<td>{{$w->start_time}}</td>
-						@if ($w->today == $c->today)
-						<td>{{$w->end_time}}</td>
+						
+						@if ($w->today === $c->today)
+							<td>{{$w->start_time}}</td>
+						@else 
+							<td></td>
+						@endif
+						@if ($w->today === $c->today)
+							<td>{{$w->end_time}}</td>
+						@else 
+							<td></td>
 						@endif
 					</tr>
 					@endforeach

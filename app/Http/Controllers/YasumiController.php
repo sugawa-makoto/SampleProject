@@ -19,18 +19,20 @@ class YasumiController extends Controller
         $carbon = Carbon::now();
         $carbon_year = $carbon->year; //今年
         $carbon_month = $carbon->month; //今月
+        $carbon_day = $carbon->day;//今日
         $carbon_several_days = $carbon->daysInMonth;//今月の日数
-        $search_start_year = calendar::where('day',$carbon_year-01-01)->exists();
 
-        if($search_start_year)
+        $search_start_day = calendar::where('day',1)->exists();
+        if($search_start_day)
         {
             return view('top');
         }
-        if(!$search_start_year)
+        if(!$search_start_day)
         {
             $days = [];
             for ($i=1; $i <= $carbon_several_days; $i++) {
-              $days[] = ['day' => $i, 'year' => $carbon_year, 'month' => $carbon_month, 'today' => Carbon::today()];
+              $days[] = ['day' => $i, 'year' => $carbon_year, 'month' => $carbon_month, 'today' => $carbon_year.'-'.$carbon_month.'-'.$i];
+
             }
             
             $cli = DB::table('calendar')
