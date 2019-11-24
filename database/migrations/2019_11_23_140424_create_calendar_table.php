@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDays30Table extends Migration
+class CreateCalendarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateDays30Table extends Migration
      */
     public function up()
     {
-        Schema::create('days_30', function (Blueprint $table) {
+        Schema::create('calendar', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('days');
-            $table->integer('now_month');
+            $table->integer('year');
+            $table->integer('month');
+            $table->integer('day');
+            $table->datetime('today');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateDays30Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('days_30');
+        Schema::dropIfExists('calendar');
     }
 }

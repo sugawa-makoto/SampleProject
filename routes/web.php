@@ -15,8 +15,7 @@ Route::get('/stamp', 'StampController@stamp');
 Route::post('/stamp_in', 'StampController@in');
 Route::post('/stamp_out', 'StampController@out');
 
-Route::get('test', 'YasumiController@yasumi');
-Route::get('test', 'YasumiController@days_30');
+Route::get('/yasumi', 'YasumiController@yasumi');
 
 Route::get('/onsite_select', 'OnsiteController@select');
 // フォームアクセス時のルーティング
@@ -25,14 +24,11 @@ Route::get('/onsite_form', 'OnsiteController@index');
 Route::post('/onsite_form', 'OnsiteController@receiveData');
 Route::get('/onsite_list', 'OnsiteController@list');
 
-
 Route::get('/top', 'TopController@top');
 
-Route::get('/record', 'RecordController@record')->name('record');
-Route::get('/record', 'RecordController@model');
+Route::get('/record', 'RecordController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::get('/database', function() {
     var_dump(((array) DB::select('SELECT database();')[0])['database()']);

@@ -78,11 +78,11 @@ table tr:last-child td:last-child {
   }
   /*-----コンテンツ領域-----*/
   .all_wrapper_record {
-      height: 100vh;
+      
       display: flex;
       justify-content: center; /*左右中央揃え*/
       /* align-items: center;     上下中央揃え */
-      height: 90%;
+      
       background: #23374D;
   }
   

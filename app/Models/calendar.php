@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class days_30 extends Model
+class calendar extends Model
 {
     // テーブル名のセット
-    protected $table = 'days_30';
+    protected $table = 'calendar';
     // 主キーのセット(検索高速化、このデータだ！！と特定できる為いい例がID→参考URL：https://www.sejuku.net/blog/52356)
     protected $guarded = array('id');
 

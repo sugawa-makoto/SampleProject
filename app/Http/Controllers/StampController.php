@@ -21,6 +21,9 @@ class StampController extends Controller {
 	}
 	// 出勤ボタン処理↓
 	public function in(){
+		$carbon = Carbon::now();
+		$carbon_year = $carbon->year; //今年（2019）しっかり更新されます
+		$carbon_month = $carbon->month; //今月(11) しっかり更新されます
 
 		// 早期リターン
 		$existsWorkingDays = working_days::where('user_id',Auth::id())->where('today',Carbon::today())->exists();
@@ -34,7 +37,9 @@ class StampController extends Controller {
 		$record->user_id = Auth::id();
 		$record->start_time = Carbon::now();
 		$record->today = Carbon::today();
-		
+		$record->year = $carbon_year;
+		$record->month = $carbon_month;
+
 		$record->save();
 		return redirect('/stamp')->with('flash_message', '出勤が完了しました');
 	}

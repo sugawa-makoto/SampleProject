@@ -44,58 +44,34 @@
 				</div>
 
 				<!-- ↓固有コンテンツ表示領域↓ -->
-				
-                <div class="all_wrapper_record">
+				<div class="all_wrapper_record">
                 <table>
                     <tr>
-                        <th>日付</th>
-                        <th>休日表示</th>
-                        <th>出勤時間</th>
-                        <th>退勤時間</th>
-                    </tr>
-                    @foreach($data as $d)
+						<th>日付</th>
+						<th>出勤</th>
+						<th>退勤</th>
+					</tr>
+					@foreach($calendar as $c)
+					@foreach($working_days as $w)
                     <tr>
-                        <!-- <td>{{$d->id}}</td> -->
-                        <!-- <td>{{$d->user_id}}</td> -->
-                        <td>{{ Carbon\Carbon::parse($d->today)->formatLocalized("%Y年%m月%d日")}}</td>
-                        <td>{{$d->yasumi_name}}</td>
-                        <td>{{$d->start_time}}</td>
-                        <td>{{$d->end_time}}</td>
-                    </tr>
-                    @endforeach
-                    </table>
-                    
+                        <td>{{$c->month.'月'.$c->day.'日'}}</td>
+						<td>{{$w->start_time}}</td>
+						@if ($w->today == $c->today)
+						<td>{{$w->end_time}}</td>
+						@endif
+					</tr>
+					@endforeach
+					@endforeach
+				</table>
                 </div>
+
 				<!-- ↑固有コンテンツ表示領域↑ -->
 	        </div>
 	    </div>
 	    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
 	</div>
 <!-- ↑サイト表示領域とpure-drawer↑ -->
-    <script>
-    	// 曜日の取得↓
-    	var now =new Date();
-    	var youbi = now.getDay();
-    	var weekday = ["（日）","（月）","（火）","（水）","（木）","（金）","（土）"];
-		document.getElementById('youbi').textContent = weekday[youbi];
 
-		// 年月日取得の処理↓
-    	function set2digits(number) {
-		    if (number < 10) {
-		        return '0' + number;
-		    }
-		    return number;
-		}
-		function setClock() {
-		    var nowTime = new Date();
-		    var nowHour = set2digits(nowTime.getHours());
-		    var nowMin  = set2digits(nowTime.getMinutes());
-		    var nowSec  = set2digits(nowTime.getSeconds());
-		    var clock   = "<h1 class='size'>" + nowHour + ":" + nowMin + "</h1>";
-		    document.getElementById("clock").innerHTML = clock;
-		}
-       setInterval('setClock()', 1000);
-    </script>
 <!-- ↑時計表示用スクリプト↑ -->
 <!-- ↓toastr用スクリプト↓ -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
