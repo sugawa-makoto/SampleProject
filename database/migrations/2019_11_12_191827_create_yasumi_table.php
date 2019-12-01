@@ -16,8 +16,7 @@ class CreateYasumiTable extends Migration
         Schema::create('yasumi', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('yasumi_name');
-            $table->date('yasumi_day');
-            $table->string('day_30') ->nullable();
+            $table->datetime('yasumi_day') ->nullable();
             $table->timestamps();
         });
     }

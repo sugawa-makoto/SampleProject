@@ -14,6 +14,7 @@
 Route::get('/stamp', 'StampController@stamp');
 Route::post('/stamp_in', 'StampController@in');
 Route::post('/stamp_out', 'StampController@out');
+Route::post('/calendar_update', 'CalendarController@update');
 
 Route::get('/yasumi', 'YasumiController@yasumi');
 

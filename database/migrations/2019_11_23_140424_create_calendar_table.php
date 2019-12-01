@@ -19,6 +19,7 @@ class CreateCalendarTable extends Migration
             $table->integer('month');
             $table->integer('day');
             $table->datetime('today');
+            $table->string('youbi');
             $table->timestamps();
         });
     }

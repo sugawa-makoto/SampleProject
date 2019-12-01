@@ -48,26 +48,34 @@
                 <table>
                     <tr>
 						<th>日付</th>
-						<th>出勤</th>
-						<th>退勤</th>
+						<th>出勤時間</th>
+						<th>退勤時間</th>
+						<th>祝日</th>
 					</tr>
 					@foreach($calendar as $c)
-					@foreach($working_days as $w)
                     <tr>
-                        <td>{{$c->month.'月'.$c->day.'日'}}</td>
+						<td>{{$c->month.'月'.$c->day.'日'}}</td>
+
+						@foreach($working_days as $v)
+							@if($c->today === $v->today)
+								<td>{{$v->start_time}}</td>
+								<td>{{$v->end_time}}</td>
+								@break
+							@elseif($loop->last && $v->today !== $c->today)
+								<td></td>
+								<td></td>
+							@endif
+						@endforeach
 						
-						@if ($w->today === $c->today)
-							<td>{{$w->start_time}}</td>
-						@else 
-							<td></td>
-						@endif
-						@if ($w->today === $c->today)
-							<td>{{$w->end_time}}</td>
-						@else 
-							<td></td>
-						@endif
+						@foreach($yasumi as $y)
+							@if($c->today === $y->yasumi_day)
+								<td>{{$y->yasumi_name}}</td>
+								@break
+							@elseif($loop->last && $c->today !== $y->yasumi_day)
+								<td></td>
+							@endif
+						@endforeach
 					</tr>
-					@endforeach
 					@endforeach
 				</table>
                 </div>

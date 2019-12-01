@@ -41,7 +41,13 @@
 						<div class="top_bar_user_name">{{Auth::user()->name}}</div>
 					</div>
 				</div>
-
+				<form action="{{ url('/calendar_update')}}" method="POST" class="form-horizontal">
+					{{ csrf_field() }}
+					<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+					<button type="submit" name="add" class="btn-circle-border-simple_out">
+						カレンダー更新（仮）
+					</button>
+				</form>
 				<!-- ↓固有コンテンツ表示領域↓ -->
 				
 			 	<div class="all_wrapper">
