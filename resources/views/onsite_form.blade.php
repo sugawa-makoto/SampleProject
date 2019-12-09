@@ -126,6 +126,13 @@
                                 <input type="submit" value="Send">
                             </p>
                             </form>
+                            <form action="/upload" method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <input type="file" name="file">
+                                <p class="msr_sendbtn_02">
+                                    <input type="submit" value="Send">
+                                </p>
+                            </form>
 						</div>
 					</div>
 				</div>                

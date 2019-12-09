@@ -26,13 +26,7 @@ class RecordController extends Controller {
     $working_days = working_days::where('year',$carbon_year)->where('month',$carbon_month)->get();
     $yasumi = \DB::table('yasumi')->get();
     
-    
-    // $observed = yasumis::where('yasumi_name', 'LIKE', "%observed")->get();
-    // if($observed){
-    //   $record = new yasumis;
-		// 	$record->yasumi_name = "振替休日";
-		// 	$record->save();
-    // }
+
 
     if($calendar->isEmpty()){
       // TODO 早期リターンで違うVIEWに飛ばす（データが見つかりません的な、４０４みたいな）

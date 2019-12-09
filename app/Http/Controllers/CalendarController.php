@@ -34,24 +34,18 @@ class CalendarController extends Controller
         if(!$search_start_day){
             $days = [];
             for ($i=1; $i <= $carbon_several_days; $i++) {
-                $days[] = ['day' => $i, 'year' => $carbon_year, 'month' => $carbon_month, 'today' => $carbon_year.'-'.$carbon_month.'-'.$i, 'youbi' => 'null'];
+                
+                $carbon_date = Carbon::parse("$carbon_year-$carbon_month-$i");
+                // 日本語ロケールをセット
+                setlocale(LC_ALL, 'ja_JP.UTF-8');
+                // これで「2019/01/01（火）」になります
+                $dayOfWeek =  $carbon_date->formatLocalized('%m月%d日(%a)');
+                
+                $days[] = ['day' => $i, 'year' => $carbon_year, 'month' => $carbon_month, 'today_youbi' => $dayOfWeek, 'today' => $carbon_year.'-'.$carbon_month.'-'.$i, 'youbi' =>null];
             }
             $cli = DB::table('calendar')
             -> insert($days);
-            // $youbi = \DB::table('calendar')->get();
-            // $search_youbi = calendar::where('day',1)->where('month',$carbon_month)->exists();
-            // $nulls = [];
-            // for ($i=1; $i <= $carbon_several_days; $i++) {
-            //   $nulls[] = ['user_id' => null, 'start_time' => null, 'end_time' => null, 'today' => $carbon_year.'-'.$carbon_month.'-'.$i, 'youbi' => null, 'yasumi_name' => null, 'year' => $carbon_year, 'month' => $carbon_month];
-
-            // }
-
-            // $null = DB::table('view_working_days')
-            // -> insert($nulls);
-            // return redirect('/stamp');
-            // //カレンダーの当月分の日付の羅列を生成する↑
         }
-        
     }
 }
 

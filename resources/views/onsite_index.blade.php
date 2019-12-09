@@ -5,6 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>I/OM=>manager_stamp</title>
    <meta name="viewport" content="width=device-width,initial-scale=1">
+   <link rel="stylesheet" href="css/onsite_index.css">
    <link rel="stylesheet" href="css/stamp.css">
    <link rel="stylesheet" href="css/pure-drawer.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
@@ -41,64 +42,20 @@
 						<div class="top_bar_user_name">{{Auth::user()->name}}</div>
 					</div>
 				</div>
+
 				<!-- ↓固有コンテンツ表示領域↓ -->
 				
-			 	<div class="all_wrapper">
-				 <div class="Setting">
-					<div class="Setting_button">
-						<form action="{{ url('/calendar_update')}}" method="POST" class="form-horizontal">
-							{{ csrf_field() }}
-							<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-							<button type="submit" name="add" class="btn-circle-border-simple_out">
-								カレンダー更新（仮）
-							</button>
-						</form>
-					</div>
-					<div class="Setting_button">
-						<form action="{{ url('/yasumi')}}" method="POST" class="form-horizontal">
-							{{ csrf_field() }}
-							<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-							<button type="submit" name="add" class="btn-circle-border-simple_in">
-								祝日更新（仮）
-							</button>
-						</form>
-					</div>
-				</div>
-					<!-- フラッシュメッセージ -->
-					<div class="wrapper_message">
-						@if (session('flash_message'))
-							<div id='hideMe'>
-								{{ session('flash_message') }}
-							</div>
-						@endif
-					</div>
-				 	<div class="wrapper_main">
-						<div class="wrapper_day_time">
-							<div class="wrapper_day_youbi">
-								<div class="day"><h1>{{$date2}}</h1></div>
-								<p id="youbi"></p>
-							</div>
-							<div id="clock"></div>
-						</div>
-						<div class="wrapper_select_button">
-							<form action="{{ url('/stamp_in')}}" method="POST" class="form-horizontal">
-								{{ csrf_field() }}
-								<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-								<button type="submit" name="add" class="btn-circle-border-simple_in">
-									出勤
-								</button>
-							</form>
-							<form action="{{ url('/stamp_out')}}" method="POST" class="form-horizontal">
-								{{ csrf_field() }}
-								<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
-								<button type="submit" name="add" class="btn-circle-border-simple_out">
-									退勤
-								</button>
-							</form>
-							<a href="/record" class="btn-circle-border-simple_list">勤務実績</a>
-						</div>
-					</div>
-				</div>
+				
+				@foreach($files as $file)
+					
+					<!-- 画像を表示 -->
+					
+					<img src="https://sugawaapp.s3.ap-northeast-1.amazonaws.com/{{ $file }}">
+					
+					
+				@endforeach
+				
+				
 				<!-- ↑固有コンテンツ表示領域↑ -->
 	        </div>
 	    </div>

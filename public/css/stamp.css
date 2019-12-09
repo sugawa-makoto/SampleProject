@@ -76,7 +76,12 @@
       visibility:hidden;
   }
 }
-
+.Setting {
+  display: flex;
+  position: absolute;
+  top:0;
+  left:0;
+}
 /*出勤ボタンのCSS*/
 .btn-circle-border-simple_in {
   display: inline-block;
