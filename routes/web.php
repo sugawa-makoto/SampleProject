@@ -26,7 +26,8 @@ Route::get('/onsite_form', 'OnsiteController@index');
 Route::post('/onsite_form', 'OnsiteController@receiveData');
 Route::get('/onsite_list', 'OnsiteController@list');
 Route::post('/upload', 'PostsController@upload');
-Route::get('/onsite_index', 'PostsController@index');
+Route::get('/onsite_photo_list', 'PhotoController@photo_list');
+Route::get('/onsite_photo_detail', 'PhotoController@photo_detail');
 
 Route::get('/top', 'TopController@top');
 

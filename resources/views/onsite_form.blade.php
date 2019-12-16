@@ -77,17 +77,26 @@
                     <p>データベースに記録しました！！</p>
                 </div>
                 @endisset
+
+                        <!-- フラッシュメッセージ -->
+                @if (session('flash_message'))
+                    <div class="flash_message">
+                        {{ session('flash_message') }}
+                    </div>
+                @endif
                 <div class="all_wrapper_onsite_work_input_details">
 				 	<div class="wrapper_main_onsite_work_input_details">
 						<div class="wrapper_form_onsite_work_input_details">
                             <form method="post" action="" enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            <p>記入者</p>
+                            {{ Auth::user()->name }}
                             <div class="msr_text_02">
                                 <label>現場名</label>
-                                <input type="text" name="onsite_name">
+                                <input type="text" name="onsite_name" placeholder="必須項目">
                             </div>
                             <div class="msr_radio_02">
-                                <p>天候</p>
+                                <p>天候  <選択必須></p>
                                 <input type="radio" name="weather" id="msr_02_radio01" value="晴れ">
                                 <label for="msr_02_radio01">晴れ</label>
                                 <input type="radio" name="weather" id="msr_02_radio02" value="曇り">
@@ -97,23 +106,23 @@
                             </div>
                             <div class="msr_text_021">
                                 <label>温度</label>
-                                <input type="text" name="temperature">℃
+                                <input type="text" name="temperature" placeholder="必須項目">℃
                             </div>
                             <div class="msr_text_021">
                                 <label>湿度</label>
-                                <input type="text" name="humidity">%
+                                <input type="text" name="humidity" placeholder="必須項目">%
                             </div>
                             <div class="msr_text_02">
                                 <label>施工タイトル</label>
-                                <input type="text" name="work_title">
+                                <input type="text" name="work_title" placeholder="必須項目">
                             </div>
                             <div class="msr_textarea_02">
                                 <label>施工詳細</label>
-                                <textarea name="work_detail"></textarea>
+                                <textarea name="work_detail" placeholder="必須項目"></textarea>
                             </div>
                             <div class="msr_text_021">
                                 <label>作業人数</label>
-                                <input type="text" name="people">人
+                                <input type="text" name="people" placeholder="必須項目">人
                             </div>
                             <!-- <div class="msr_file_02">
                                 <p>file</p>

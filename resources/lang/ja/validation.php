@@ -116,6 +116,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'onsite_name'=>'現場名',
+        'weather'=>'天候',
+        'temperature'=>'温度',
+        'humidity'=>'湿度',
+        'work_title'=>'施工タイトル',
+        'work_detail'=>'施工詳細',
+        'people'=>'作業人数',
+    ],
 
 ];

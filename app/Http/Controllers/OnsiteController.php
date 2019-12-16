@@ -25,6 +25,7 @@ class OnsiteController extends Controller{
         'work_detail' => 'required',              // 必須
         'people' => 'required|integer',          // 必須・整数
         ]);
+        
         $record = new Onsite;
 		$record->onsite_name = $request->onsite_name;
 		$record->weather = $request->weather;
@@ -33,7 +34,7 @@ class OnsiteController extends Controller{
 		$record->work_title = $request->work_title;
         $record->work_detail = $request->work_detail;
         $record->people = $request->people;
-        
+        $record->user_name = Auth::user()->name;
         $record->save();
         
         // 二重送信対策

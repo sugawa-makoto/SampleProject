@@ -29,7 +29,7 @@ class CalendarController extends Controller
         
         if($search_start_day)
         {
-            return view('top');
+            return redirect('/stamp');
         }
         if(!$search_start_day){
             $days = [];
@@ -45,6 +45,7 @@ class CalendarController extends Controller
             }
             $cli = DB::table('calendar')
             -> insert($days);
+            return redirect('/stamp');
         }
     }
 }

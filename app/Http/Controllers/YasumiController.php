@@ -29,7 +29,7 @@ class YasumiController extends Controller
             
             if ($existsWorkingDays)
             {
-                return view('top');
+                return redirect('/stamp');
             }
             if (!$existsWorkingDays){
                 $holidays = yasumi_create::create('Japan', "$carbon_year", 'ja_JP');
@@ -44,7 +44,7 @@ class YasumiController extends Controller
                 $cli = DB::table('yasumi')
                 -> insert($yasumidata);
 
-            }
+            
 
             $yasumi_table = DB::table('yasumi');
             $data = $yasumi_table
@@ -52,5 +52,7 @@ class YasumiController extends Controller
             ->update([
                 'yasumi_name' => "振替休日"
             ]);
+            return redirect('/stamp');
+            }
     }
 }
