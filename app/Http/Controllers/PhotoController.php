@@ -12,9 +12,10 @@ class PhotoController extends Controller
 {
     public function photo_list()
     {
-        $poto_infos = \DB::table('photo')->get();
+        $onsites = \DB::table('onsites')->get();
+        
     
-        return view('onsite_photo_list', ['poto_infos' => $poto_infos]);
+        return view('onsite_photo_list', ['onsites' => $onsites]);
     }
 
 

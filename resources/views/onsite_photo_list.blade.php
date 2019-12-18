@@ -45,8 +45,8 @@
 
 				<!-- ↓固有コンテンツ表示領域↓ -->
 				
-				@foreach($poto_infos as $poto_info)
-					<a href="/onsite/{{ $poto_info->id }}/{{ $poto_info->company_name }}/{{ $poto_info->onsite_name }}">{{ $poto_info->company_name }}{{ $poto_info->onsite_name }}</a>
+				@foreach($onsites as $onsite)
+					<a href="/onsite/{{ $onsite->id }}/{{ $onsite->onsite_name }}/{{ $onsite->created_at }}">{{ $onsite->onsite_name }}</a>
 				@endforeach
 
 				<!-- ↑固有コンテンツ表示領域↑ -->

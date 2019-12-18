@@ -34,7 +34,6 @@ class OnsiteController extends Controller{
 		$record->work_title = $request->work_title;
         $record->work_detail = $request->work_detail;
         $record->people = $request->people;
-        $record->user_name = Auth::user()->name;
         $record->save();
         
         // 二重送信対策

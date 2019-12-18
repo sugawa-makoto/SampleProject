@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Posts;
 use App\Models\Company;
 use App\Models\Photo;
+use App\Models\Onsite;
 use Storage;
 use DB;
 class PostsController extends Controller
