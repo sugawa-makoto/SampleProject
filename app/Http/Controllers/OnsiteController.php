@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Onsite;
+use App\Models\Photo;
+use Storage;
+use DB; 
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -25,7 +28,8 @@ class OnsiteController extends Controller{
         'work_detail' => 'required',              // 必須
         'people' => 'required|integer',          // 必須・整数
         ]);
-        
+
+
         $record = new Onsite;
 		$record->onsite_name = $request->onsite_name;
 		$record->weather = $request->weather;
@@ -38,6 +42,37 @@ class OnsiteController extends Controller{
         
         // 二重送信対策
         $request->session()->regenerateToken();
+
+        $files = $request->file('file');
+        if(!empty($files)):
+            foreach($files as $file):
+                // $path = Storage::disk('s3')->putFile('/', $file, 'public');
+                // ファイル名を指定する
+                // $path = Storage::putFileAs('photos', new File('/path/to/photo'), 'photo.jpg');
+                // 企業名指定（企業毎指定）
+                $company_name = 'ABC';
+                // フォームで選択された現場名
+                $onsite_name = $record->onsite_name;
+                // onsite_id
+                $onsite_id = $record->id;
+                // ランダムな文字列を生成
+                $access_token = str_random(32);
+                //ランダム文字列png指定1
+                $filename = $company_name.$onsite_name.$access_token.'.png';
+                //第一引数：S3のフォルダー、第二引数：ファイルのURL、第三引数：任意のファイル名、第４引数：公開指定
+                $path = Storage::disk('s3')->putFileAs('/', $file, $filename, 'public');
+                $photo = Photo::create([
+                    'company_name' => $company_name,
+                    'image_url' => $filename,
+                    'onsite_name' => $onsite_name,
+                    'onsite_id' => $onsite_id,
+                    ]);
+            endforeach;
+        endif;
+        
+
+
+
         return view('onsite_form', ['status' => true]);
     }
 
@@ -52,6 +87,6 @@ class OnsiteController extends Controller{
       $data = $md->getData();
       // ビューを返す
     //   dd($data);
-      return view('onsite_list', ['data' => $data]);
+    return redirect ('onsite_list', ['data' => $data]);
     }
 }

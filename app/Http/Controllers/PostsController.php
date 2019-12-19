@@ -13,6 +13,7 @@ class PostsController extends Controller
 {
     public function upload(Request $request)
     {
+        
         $files = $request->file('file');
  
         if(!empty($files)):
@@ -34,7 +35,7 @@ class PostsController extends Controller
                     'company_name' => $company_name,
                     'image_url' => $filename,
                     'onsite_name' => $onsite_name,
-                ]);
+                    ]);
             endforeach;
         endif;
         return redirect('/onsite_form')->with('flash_message', 'uploadが完了しました');
