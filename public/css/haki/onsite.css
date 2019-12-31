@@ -24,7 +24,6 @@
     display: flex;
     width: 70%;
     justify-content: space-around;
-    
 }
 .wrapper_main_onsite {
     display: -webkit-flex;

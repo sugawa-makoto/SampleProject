@@ -25,9 +25,13 @@ Route::get('/onsite_form', 'OnsiteController@index');
 // フォーム送信時のルーティング
 Route::post('/onsite_form', 'OnsiteController@receiveData');
 Route::get('/onsite_list', 'OnsiteController@list');
+Route::post('/onsite_list_delete/{id}', 'OnsiteController@delete');
+Route::get('/onsite_list_show/{id}', 'OnsiteController@show');
+Route::get('/onsite_list_edit/{id}', 'OnsiteController@edit');
+Route::post('/onsite_list_update/{id}', 'OnsiteController@update');
 Route::post('/upload', 'PostsController@upload');
 Route::get('/onsite_photo_list', 'PhotoController@photo_list');
-Route::get('/onsite_photo_detail', 'PhotoController@photo_detail');
+Route::get('/onsite{id}', 'PhotoController@photo_detail');
 
 Route::get('/top', 'TopController@top');
 

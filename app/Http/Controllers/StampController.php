@@ -11,13 +11,30 @@ use DB;
 
 class StampController extends Controller {
     public function stamp(){
-    	date_default_timezone_set('Asia/Tokyo');
-		$date2 = date("Y年m月d日");
-		$time2 = date("H時i分s秒");
-  		return view('stamp')->with([
-		"date2" => $date2,
-		"time2" => $time2,
-		]);
+		$carbon = Carbon::now();
+        $carbon_year = $carbon->year; //今年
+        $carbon_month = $carbon->month; //今月
+		$carbon_day = $carbon->day;//今日
+		$carbon_hour = $carbon->hour;//時
+		$carbon_minute = $carbon->minute;//時
+		$japan_time = $carbon_hour.':'.$carbon_minute;
+
+		$carbon_date = Carbon::parse("$carbon_year-$carbon_month-$carbon_day");
+		// 日本語ロケールをセット
+		setlocale(LC_ALL, 'ja_JP.UTF-8');
+		// これで「2019/01/01（火）」になります
+		$dayOfWeek =  $carbon_date->formatLocalized('%m月%d日(%a)');
+
+		if($carbon_minute < 10) {
+			$japan_time = $carbon_hour.':'.'0'.$carbon_minute;
+		}
+
+
+
+		$date2 = $dayOfWeek;
+		$time2 = $japan_time;
+	
+		return view('stamp',compact('date2','time2'));
 	}
 	// 出勤ボタン処理↓
 	public function in(){

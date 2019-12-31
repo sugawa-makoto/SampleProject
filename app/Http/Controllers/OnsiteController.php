@@ -46,9 +46,6 @@ class OnsiteController extends Controller{
         $files = $request->file('file');
         if(!empty($files)):
             foreach($files as $file):
-                // $path = Storage::disk('s3')->putFile('/', $file, 'public');
-                // ファイル名を指定する
-                // $path = Storage::putFileAs('photos', new File('/path/to/photo'), 'photo.jpg');
                 // 企業名指定（企業毎指定）
                 $company_name = 'ABC';
                 // フォームで選択された現場名
@@ -58,7 +55,7 @@ class OnsiteController extends Controller{
                 // ランダムな文字列を生成
                 $access_token = str_random(32);
                 //ランダム文字列png指定1
-                $filename = $company_name.$onsite_name.$access_token.'.png';
+                $filename = $onsite_id.$access_token.'.png';
                 //第一引数：S3のフォルダー、第二引数：ファイルのURL、第三引数：任意のファイル名、第４引数：公開指定
                 $path = Storage::disk('s3')->putFileAs('/', $file, $filename, 'public');
                 $photo = Photo::create([
@@ -70,9 +67,6 @@ class OnsiteController extends Controller{
             endforeach;
         endif;
         
-
-
-
         return view('onsite_form', ['status' => true]);
     }
 
@@ -81,12 +75,48 @@ class OnsiteController extends Controller{
     }
 
     public function list(){
-      // Frameworksモデルのインスタンス化
-      $md = new Onsite();
-      // データ取得
-      $data = $md->getData();
+      // Eloquentでデータ取得
+      $data = Onsite::all();
       // ビューを返す
-    //   dd($data);
-    return redirect ('onsite_list', ['data' => $data]);
+    return view ('onsite_list', ['data' => $data]);
+    }
+
+    public function delete (Request $request)
+    {
+        Onsite::find($request->id)->delete();
+        return redirect('/onsite_list');
+    }
+
+    public function show($id)
+    {
+        //レコードを検索
+        $user = User::find($id);
+        //検索結果をビューに渡す
+        return view('users.show')->with('user',$user);
+    }
+
+    public function edit($id)//フォームでPOSTされたものを取得するのではなくaタグのGETメソッドの中のidの情報をもらうだけなので(Request $request, $id)または上のdeleteアクションのようなidの取得の仕方はしなくてすむ。参考：https://qiita.com/nekyo/items/506f64ca1dcb1d82a986
+    {
+        //レコードを検索
+        $onsite_list = Onsite::find($id);
+        //検索結果をビューに渡す
+        return view('onsite_list_edit')->with('onsite_list',$onsite_list);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //レコードを検索
+        $onsite_list = Onsite::find($id);
+        //値を代入
+        $onsite_list->weather = $request->weather;
+        $onsite_list->temperature = $request->temperature;
+        $onsite_list->humidity = $request->humidity;
+        $onsite_list->work_title = $request->work_title;
+        $onsite_list->work_detail = $request->work_detail;
+        $onsite_list->people = $request->people;
+        //保存（更新）
+        $onsite_list->save();
+        //リダイレクト
+        return redirect('onsite_list');
     }
 }

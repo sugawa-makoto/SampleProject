@@ -1,0 +1,14 @@
+.wrapper_photos_all {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.onsite_photo {
+    width: 100%;
+    height: 180px;
+}
+.wrapper_photos {
+    width: 30%;
+    height: 10%;
+}
+

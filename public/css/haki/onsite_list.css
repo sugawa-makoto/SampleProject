@@ -1,11 +1,5 @@
 
-@charset "UTF-8";
-.header_fixed th {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 10%;
-  z-index: 1;
-}
+
 
 table{
     width: 95%;
@@ -33,7 +27,6 @@ table{
     box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset; 
     width: 14%;
     padding: 10px 0;
-    
   }
   
   table td{
@@ -88,7 +81,7 @@ table{
     .all_wrapper_onsite_list {
        
       position: relative;
-      height: 100vh;
+      
       display: flex;
       justify-content: center;
       /* align-items: center; */

@@ -25,7 +25,7 @@
   color: #A9A9A9;
 }
 /*-----コンテンツ領域-----*/
-.all_wrapper {
+.all_wrapper_top {
     height: 100vh;
     display: flex;
     justify-content: center; /*左右中央揃え*/
@@ -34,7 +34,7 @@
     background: #23374D;
 }
 
-.wrapper_main {
+.wrapper_main_top {
    display: -webkit-flex;
    display: flex;
     -webkit-flex-flow: row nowrap;
@@ -50,7 +50,6 @@
   font-size: 3rem;
   margin-bottom:0.5rem;
   color: #FFFFFF;
-  
 }
 
 .wrapper_brand h2 {
