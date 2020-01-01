@@ -105,6 +105,7 @@ class OnsiteController extends Controller{
 
     public function update(Request $request, $id)
     {
+        
         //レコードを検索
         $onsite_list = Onsite::find($id);
         //値を代入

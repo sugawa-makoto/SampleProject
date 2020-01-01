@@ -18,32 +18,42 @@
 
     <div class="form-group">
         <label>天気</label>
-        <input type="string" name="" value="{{$onsite_list->weather}}" class="form-control">
+        
+        <input checked="checked" type="radio" name="weather" id="msr_02_radio01" value="{{$onsite_list->weather}}">
+        <label for="msr_02_radio01">晴れ</label>
+
+
+        <input type="radio" name="weather" id="msr_02_radio02" value="{{$onsite_list->weather}}">
+        <label for="msr_02_radio02">曇り</label>
+
+
+        <input type="radio" name="weather" id="msr_02_radio03" value="{{$onsite_list->temperature}}">
+        <label for="msr_02_radio03">雨</label>
     </div>
 
     <div class="form-group">
         <label>温度</label>
-        <input type="integer" name="" value="{{$onsite_list->temperature}}" class="form-control">
+        <input type="text" name="temperature" value="{{$onsite_list->temperature}}" class="form-control">
     </div>
 
     <div class="form-group">
         <label>湿度</label>
-        <input type="integer" name="" value="{{$onsite_list->humidity}}" class="form-control">
+        <input type="text" name="humidity" value="{{$onsite_list->humidity}}" class="form-control">
     </div>
 
     <div class="form-group">
         <label>施工タイトル</label>
-        <input type="string" name="" value="{{$onsite_list->work_title}}" class="form-control">
+        <input type="text" name="work_title" value="{{$onsite_list->work_title}}" class="form-control">
     </div>
 
     <div class="form-group">
         <label>施工詳細</label>
-        <input type="text" name="" value="{{$onsite_list->work_detail}}" class="form-control">
+        <input type="text" name="work_detail" value="{{$onsite_list->work_detail}}" class="form-control">
     </div>
 
     <div class="form-group">
         <label>人数</label>
-        <input type="integer" name="" value="{{$onsite_list->people}}" class="form-control">
+        <input type="text" name="people" value="{{$onsite_list->people}}" class="form-control">
     </div>
 
     <input type="hidden" name="_token" value="{{csrf_token()}}">
