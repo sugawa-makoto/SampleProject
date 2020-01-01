@@ -108,6 +108,7 @@ class OnsiteController extends Controller{
         
         //レコードを検索
         $onsite_list = Onsite::find($id);
+    
         //値を代入
         $onsite_list->weather = $request->weather;
         $onsite_list->temperature = $request->temperature;
@@ -116,7 +117,9 @@ class OnsiteController extends Controller{
         $onsite_list->work_detail = $request->work_detail;
         $onsite_list->people = $request->people;
         //保存（更新）
+        
         $onsite_list->save();
+        
         //リダイレクト
         return redirect('onsite_list');
     }

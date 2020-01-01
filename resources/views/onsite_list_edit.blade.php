@@ -19,15 +19,16 @@
     <div class="form-group">
         <label>天気</label>
         
-        <input checked="checked" type="radio" name="weather" id="msr_02_radio01" value="{{$onsite_list->weather}}">
+        <input type="radio" name="weather" id="msr_02_radio01" value="晴れ" @if ($onsite_list->weather == '晴れ') checked @endif>
         <label for="msr_02_radio01">晴れ</label>
-
-
-        <input type="radio" name="weather" id="msr_02_radio02" value="{{$onsite_list->weather}}">
+        <!-- @if ($onsite_list->weather == '晴れ') checked @endifの記述で例えば、編集前：晴れなら編集画面の初期値を晴れにチェックしておく。
+        valueの値はラジオボタンの内容を伝える要素。失敗した事例：value="$onsite_list->weather"にしたら編集前の値が入って送信されて更新が効かなかった。
+        なのでしっかり、晴れ、曇、雨で分けたら対応可となった。 -->
+        <input type="radio" name="weather" id="msr_02_radio02" value="曇り" @if ($onsite_list->weather == '曇り') checked @endif>
         <label for="msr_02_radio02">曇り</label>
 
 
-        <input type="radio" name="weather" id="msr_02_radio03" value="{{$onsite_list->temperature}}">
+        <input type="radio" name="weather" id="msr_02_radio03" value="雨" @if ($onsite_list->weather == '雨') checked @endif>
         <label for="msr_02_radio03">雨</label>
     </div>
 
