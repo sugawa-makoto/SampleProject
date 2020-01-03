@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
  <html>
  <head>
@@ -98,14 +99,74 @@
 	        </div>
 	    </div>
 	    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
+=======
+@extends('layouts.common')
+<!-- cssの追加 -->
+@section('css')
+<link rel="stylesheet" href="css/all.css">
+@endsection
+<!-- コンテンツ領域 -->
+@section('content')
+<div class="stamp_all_wrapper">
+	<div class="setting">
+		<form action="{{ url('/calendar_update')}}" method="POST" class="form-horizontal">
+			{{ csrf_field() }}
+			<button type="submit" name="add" class="btn_circle_red" id="calendar">
+				カレンダー更新（仮）
+			</button>
+		</form>
+		<form action="{{ url('/yasumi')}}" method="POST" class="form-horizontal">
+			{{ csrf_field() }}
+			<button type="submit" name="add" class="btn_circle_blue" id="yasumi">
+				祝日更新（仮）
+			</button>
+		</form>
+>>>>>>> a573a90f11b0f00842e3701402bb2ac6ec92f4e1
 	</div>
-<!-- ↑サイト表示領域とpure-drawer↑ -->
-    <script>
+	<!-- フラッシュメッセージ -->
+	<div class="stamp_flash_message_wrapper">
+		@if (session('flash_message'))
+			<div id='hideMe'>
+				{{ session('flash_message') }}
+			</div>
+		@endif
+	</div>
+	<div class="wrapper_main">
+		<div class="wrapper_day_time">
+			<div class="wrapper_day_youbi">
+				<div class="day">{{$date2}}</div>
+				
+			</div>
+			<div id="clock">{{$time2}}</div>
+		</div>
+		<div class="wrapper_select_button">
+			<form action="{{ url('/stamp_in')}}" method="POST">
+				{{ csrf_field() }}
+				<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+				<button type="submit" name="add" class="btn_circle_blue">
+					出勤
+				</button>
+			</form>
+			<form action="{{ url('/stamp_out')}}" method="POST">
+				{{ csrf_field() }}
+				<!-- <textarea type="hiddon" rows="6" name="message"></textarea> -->
+				<button type="submit" name="add" class="btn_circle_red">
+					退勤
+				</button>
+			</form>
+			<a href="/record" class="btn_circle_orange">勤務実績</a>
+		</div>
+	</div>
+</div>
+@endsection
+<!-- script領域 -->
+@section('script')
+<script>
     	// 曜日の取得↓
-    	var now =new Date();
-    	var youbi = now.getDay();
-    	var weekday = ["（日）","（月）","（火）","（水）","（木）","（金）","（土）"];
-		document.getElementById('youbi').textContent = weekday[youbi];
+    	// var now =new Date();
+    	// var youbi = now.getDay();
+    	// var weekday = ["（日）","（月）","（火）","（水）","（木）","（金）","（土）"];
+		// document.getElementById('youbi').textContent = weekday[youbi];
 
 		// 年月日取得の処理↓
     	function set2digits(number) {
@@ -120,13 +181,59 @@
 		    var nowMin  = set2digits(nowTime.getMinutes());
 		    var nowSec  = set2digits(nowTime.getSeconds());
 		    var clock   = "<h1 class='size'>" + nowHour + ":" + nowMin + "</h1>";
-		    document.getElementById("clock").innerHTML = clock;
+		    // document.getElementById("clock").innerHTML = clock;
 		}
        setInterval('setClock()', 1000);
-    </script>
-<!-- ↑時計表示用スクリプト↑ -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
- </body>
- </html> 
+
+
+// // reloadの基本的な使い方
+// function doReload() {
+ 
+//  // reloadメソッドによりページをリロード
+//  window.location.reload();
+// }
+
+// window.addEventListener('load', function () {
+
+//  // ページ表示完了した3秒後にリロード
+//  setTimeout(doReload, 10000);
+// });
+
+
+// var score = 90;
+
+// if (score >= 80) {
+// document.write("合格です！おめでとうございます！");
+// }
+
+
+// window.onload = function () { // ページ読み込み時に実行する無名関数
+//     document.getElementById( "calendar" ).click();
+// }
+// window.onload = function () { // ページ読み込み時に実行する無名関数
+//     document.getElementById( "yasumi" ).click();
+// }
+
+
+window.onload = function()
+{
+Time = new Date();
+M = Time.getSeconds(); //現在の分を取得、変数Mに代入
+Rest = ((60 - M)) * 1000; //ここがその残り時間(ミリ秒)を計算する処理
+
+setTimeout(function(){
+location.reload(true)
+}, Rest);
+}
+
+window.onload = function () { // ページ読み込み時に実行する無名関数
+    document.getElementById("yasumi").click();
+}
+window.onload = function () { // ページ読み込み時に実行する無名関数
+    document.getElementById("calendar").click();
+}
+
+
+
+</script>
+@endsection
