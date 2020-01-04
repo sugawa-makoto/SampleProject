@@ -10,13 +10,20 @@
     "require": {
         "php": "^7.2",
         "azuyalabs/yasumi": "^2.2",
+<<<<<<< HEAD
+=======
         "doctrine/dbal": "^2.10",
+>>>>>>> a573a90f11b0f00842e3701402bb2ac6ec92f4e1
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
+<<<<<<< HEAD
+        "nesbot/carbon": "^2.25"
+=======
         "league/flysystem-aws-s3-v3": "^1.0"
+>>>>>>> a573a90f11b0f00842e3701402bb2ac6ec92f4e1
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

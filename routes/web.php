@@ -10,6 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
+// 〜〜〜〜〜〜〜〜〜〜〜
+Route::get('stamp', 'StampController@stamp' , function() {
+    // 認証済みのユーザーのみが入れる
+	return view('stamp');
+})->middleware('auth');
+// 〜〜〜〜〜〜〜〜〜〜〜
+
+
+// 〜〜〜〜〜〜〜〜〜〜〜
+Route::get('top', function () {
+    return view('top');
+});
+// 〜〜〜〜〜〜〜〜〜〜〜
+
+
+// 〜〜〜〜〜〜〜〜〜〜〜
+Route::get('/record', 'RecordController@record')->name('record');
+Route::get('record', 'RecordController@model');
+// 〜〜〜〜〜〜〜〜〜〜〜
+
+
+// 〜〜〜〜〜〜〜〜〜〜〜
+=======
 
 Route::get('/stamp', 'StampController@stamp');
 Route::post('/stamp_in', 'StampController@in');
@@ -39,11 +63,23 @@ Route::get('/record', 'RecordController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+>>>>>>> a573a90f11b0f00842e3701402bb2ac6ec92f4e1
 Route::get('/database', function() {
     var_dump(((array) DB::select('SELECT database();')[0])['database()']);
 });
 Auth::routes();
 
+<<<<<<< HEAD
+Route::get('/home', 'HomeController@index')->name('home');
+// 〜〜〜〜〜〜〜〜〜〜〜〜
+
+
+=======
+>>>>>>> a573a90f11b0f00842e3701402bb2ac6ec92f4e1
 
 
 
+// 〜〜〜〜〜お試し〜〜〜〜〜〜
+Route::post('/stamp', 'stampsController@punchIn')->name('stamp/punchin');
+Route::post('/stamp', 'stampsController@punchOut')->name('stamp/punchout');
+// 〜〜〜〜〜〜〜〜〜〜〜
