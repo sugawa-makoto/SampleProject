@@ -123,12 +123,7 @@ location.reload(true)
 }, Rest);
 }
 
-window.onload = function () { // ページ読み込み時に実行する無名関数
-    document.getElementById("yasumi").click();
-}
-window.onload = function () { // ページ読み込み時に実行する無名関数
-    document.getElementById("calendar").click();
-}
+
 
 
 
