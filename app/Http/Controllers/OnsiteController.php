@@ -100,7 +100,7 @@ class OnsiteController extends Controller{
         //レコードを検索
         $onsite_list = Onsite::find($id);
         //検索結果をビューに渡す
-        return view('onsite_list_edit')->with('onsite_list',$onsite_list);
+        return view('onsite_edit')->with('onsite_list',$onsite_list);
     }
 
     public function update(Request $request, $id)
