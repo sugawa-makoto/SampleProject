@@ -6,8 +6,8 @@
    <title>I/OM=>manager_stamp</title>
    <meta name="viewport" content="width=device-width,initial-scale=1">
    @yield('css')
-   <link rel="stylesheet" href="css/all.css">
-   <link rel="stylesheet" href="css/pure-drawer.css">
+   <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/pure-drawer.css') }}">
    @yield('style')
  </head>
  <!-- ↑宣言関係↑ -->
