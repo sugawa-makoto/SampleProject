@@ -7,55 +7,32 @@
    <meta name="viewport" content="width=device-width,initial-scale=1">
    @yield('css')
    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/pure-drawer.css') }}">
    @yield('style')
  </head>
  <!-- ↑宣言関係↑ -->
- <body>
- <!-- ↓サイト表示領域とpure-drawer↓ -->
-	<div class="pure-container" data-effect="pure-effect-slide">
-		<input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
-		<div class="pure">
-			<label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
-				<span class="pure-toggle-icon"></span>
-			</label>
+ <body>       
+	<!-- ↓トップバーの内容↓ -->
+	<div class="top_bar">
+		<div class="top_bar_brand">I/O=>manager</div>
+		<div class="top_bar_user">
+			<div class="login_user_title">現在のログインユーザー</div>
+			<div class="top_bar_user_name">{{Auth::user()->name}}<span class="sama">様</span></div>
 		</div>
-	    <div class="pure-drawer" data-position="left">
-	        <!-- ↓pure-drawerハンバーガーメニューの中身↓ -->
-			<div class="row collapse">
-                <div class="large-12 columns">
-                    <ul class="nav-primary">
-                        <!-- メニュー一覧↓ -->
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/stamp">修正</a></li>
-						<li><a href="/onsite_select">現場管理</a></li>
-						<li><a href="/onsite_photo_list">現場写真</a></li>
-                        <!-- メニュー一覧↑ -->
-                    </ul>
-                </div>
-            </div>
-	        <!-- ↑pure-drawerハンバーガーメニューの中身↑ -->
-	    </div>
-	    <div class="pure-pusher-container">
-	        <div class="pure-pusher">       
-				<!-- ↓トップバーの内容↓ -->
-	 		 	<div class="top_bar">
-					<div class="top_bar_brand">I/O=>manager</div>
-					<div class="top_bar_user">
-						<div class="login_user_title">現在のログインユーザー</div>
-						<div class="top_bar_user_name">{{Auth::user()->name}}<span class="sama">様</span></div>
-					</div>
-				</div>
-
-                <!-- ↓固有コンテンツ表示領域↓ -->
-                
-                @yield('content')
-
-				<!-- ↑固有コンテンツ表示領域↑ -->
-	        </div>
-	    </div>
-	    <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
 	</div>
+	<!-- ↑トップバーの内容↑ -->
+	<!-- ↓トップメニューの内容↓ -->
+	<div class="top_menu">
+		<div class="menu_button"><a href="{{ asset('/home')}}">HOME</a></div>
+		<div class="menu_button"><a href="{{ asset('/stamp')}}">勤怠画面</a></div>
+		<div class="menu_button"><a href="{{ asset('/record')}}">勤怠履歴</a></div>
+		<div class="menu_button"><a href="{{ asset('/onsite_form')}}">現場情報入力</a></div>
+		<div class="menu_button"><a href="{{ asset('/onsite_list')}}">現場情報リスト</a></div>
+		<div class="menu_button"><a href="{{ asset('/onsite_photo_list')}}">現場写真リスト</a></div>
+	</div>
+	<!-- ↑トップメニューの内容↑ -->
+	<!-- ↓固有コンテンツ表示領域↓ -->
+	@yield('content')
+	<!-- ↑固有コンテンツ表示領域↑ -->
 <!-- ↑サイト表示領域とpure-drawer↑ -->
 @yield('script')
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

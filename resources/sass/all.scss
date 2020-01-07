@@ -5,6 +5,24 @@
   margin:0;
   padding: 0;
 }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #374c5d;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default;
+}
 // ＊＊＊＊＊＊＊＊＊＊
 // 汎用
 // ＊＊＊＊＊＊＊＊＊＊
@@ -53,6 +71,9 @@
   font-size: 25px;
   transition: .4s;
 }
+.background_red {
+  background: rgb(252, 0, 121);
+}
 // ＊＊＊＊＊＊＊＊＊＊
 // トップバー
 // ＊＊＊＊＊＊＊＊＊＊
@@ -93,6 +114,32 @@
     }
   }
 }
+// ＊＊＊＊＊＊＊＊＊＊
+// トップバーMENU
+// ＊＊＊＊＊＊＊＊＊＊
+.top_menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  background: #5876a3;
+  z-index: 100;
+  a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 30px;
+  }
+  .menu_button:last-child {  
+    color: #fff;
+    background: #5876a3;
+    border-right: 0px solid #FFF;
+  }
+  .menu_button {
+      color: #fff;
+      background: #5876a3;
+      border-right: 1px solid #FFF;
+  }
+}
 // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 // 出退勤ページ stamp.blade.php
 // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
@@ -105,6 +152,7 @@
   height: 90%;
   -webkit-flex-direction: column;
   flex-direction: column;
+  background: #FFF;
   .setting {
     display: flex;
     position: absolute;
@@ -222,7 +270,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background: #23374D;
   table{
     width: 95%;
     border-collapse:separate;
@@ -234,30 +281,30 @@
   }
   table th:last-child{
     border-radius: 0 5px 0 0;
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid rgb(0, 0, 0);
   }
   table th{
     text-align: center;
     color:rgb(0, 0, 0);
     background: linear-gradient(#ffffff,#ffffff);
-    border-left: 1px solid #ffffff;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
     box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset; 
     width: 14%;
     padding: 10px 0;
   }
   table td{
     text-align: center;
-    border-left: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-    color: #FFFFFF;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     border-top:none;
     width: 14%;
     padding: 10px 0;
   }
   table td:last-child{
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid rgb(0, 0, 0);
   }
   table tr:last-child td:first-child {
     border-radius: 0 0 0 5px;
@@ -332,7 +379,6 @@ img {
 .all_wrapper_record {
   display: flex;
   justify-content: center; /*左右中央揃え*/
-  background: #23374D;
 }
 table{
   width: 80%;
@@ -353,16 +399,16 @@ table th:first-child{
 
 table th:last-child{
   border-radius: 0 5px 0 0;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid rgb(0, 0, 0);
 }
 
 table th{
   text-align: center;
   color:rgb(0, 0, 0);
   background: linear-gradient(#ffffff,#ffffff);
-  border-left: 1px solid #ffffff;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid rgb(0, 0, 0);
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
   /* box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset; */
   width: 15%;
   padding: 10px 0;
@@ -370,9 +416,9 @@ table th{
 
 table td{
   text-align: center;
-  border-left: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  color: #FFFFFF;
+  border-left: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   border-top:none;
   /* box-shadow: 0px -3px 5px 1px #eee inset; */
   width: 15%;
@@ -380,7 +426,7 @@ table td{
 }
 
 table td:last-child{
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid rgb(0, 0, 0);
 }
 
 table tr:last-child td:first-child {
@@ -459,10 +505,9 @@ background: -webkit-linear-gradient(90deg, rgb(0, 57, 255), rgb(0, 191, 255));
 background: linear-gradient(90deg, rgb(0, 57, 255), rgb(0, 191, 255));
 transition: .4s;
 }
-
-
-
-
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+// 現場情報入力画面 onsite_form.blade.php
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 .all_wrapper_onsite_work_input_details {
   position: relative;
   height: 100vh;
@@ -486,8 +531,7 @@ transition: .4s;
   border-radius:5px;
 }
 .wrapper_form_onsite_work_input_details {
-  margin-top: 30%;
-  width: 50%;
+  margin-top: 10%;
   justify-content: space-around;
   
 }
@@ -496,7 +540,6 @@ transition: .4s;
   display: flex;
    -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  width: 100%;
   justify-content: center; /*左右中央揃え*/
 }
 .wrapper_day_time_work_input_details {
@@ -784,7 +827,6 @@ transition: .4s;
   margin:0 0 10px;
 }
 .msr_sendbtn_02 input[type=submit] {
-  background: url(/stylerecipe_img/arrow_blue02.png) no-repeat;
   background-position: 10px;
   border: 2px solid #1B73BA;
   box-sizing: border-box;
@@ -812,4 +854,12 @@ transition: .4s;
 }
 .msr_sendbtn_02 input[disabled=disabled]:hover {
   opacity: 1;
+}
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+// 現場リスト更新ページ onsite_edit.blade.php
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+.onsite_edit_center {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
 }

@@ -38,7 +38,7 @@
                     <td>
                         <form method="post" action="/onsite_list_delete/{{$d->id}}">
                         {{ csrf_field() }}
-                        <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("本当に削除しますか？");'>
+                        <input type="submit" value="削除" class="btn btn-danger btn-sm background_red" onclick='return confirm("本当に削除しますか？");'>
                         </form>
                     </td>
                 </tr>

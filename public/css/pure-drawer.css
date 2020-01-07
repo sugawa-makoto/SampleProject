@@ -269,7 +269,7 @@ body {
   overflow-y: auto;
   left: 0;
   z-index: 2;
-  background-color: #fff;
+  background-color: #23374D;
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: ease-out;
