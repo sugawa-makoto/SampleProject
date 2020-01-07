@@ -535,7 +535,7 @@ table tr:last-child td:last-child {
 
 .msr_text_02 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_text_02 label {
@@ -553,12 +553,12 @@ table tr:last-child td:last-child {
   font-size: 13px;
   padding: 10px;
   height: 40px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_text_021 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_text_021 label {
@@ -744,7 +744,7 @@ table tr:last-child td:last-child {
 
 .msr_file_02 {
   padding-bottom: 20px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_file_02 > p {
@@ -768,7 +768,7 @@ table tr:last-child td:last-child {
   position: relative;
   padding: 10px;
   height: 20px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_filebox_02 label:before {
@@ -795,7 +795,7 @@ table tr:last-child td:last-child {
 
 .msr_textarea_02 {
   padding-bottom: 10px;
-  width: 460px;
+  width: 400px;
 }
 
 .msr_textarea_02 label {
@@ -813,7 +813,7 @@ table tr:last-child td:last-child {
   font-size: 13px;
   padding: 10px;
   height: 210px;
-  width: 460px;
+  width: 400px;
 }
 
 /*--------------------------------------
