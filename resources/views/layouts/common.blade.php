@@ -23,6 +23,7 @@
 	<!-- ↓トップメニューの内容↓ -->
 	<div class="top_menu">
 		<div class="menu_button"><a href="{{ asset('/home')}}">HOME</a></div>
+		<div class="menu_button"><a href="{{ asset('/kanri')}}">管理画面</a></div>
 		<div class="menu_button"><a href="{{ asset('/stamp')}}">勤怠画面</a></div>
 		<div class="menu_button"><a href="{{ asset('/record')}}">勤怠履歴</a></div>
 		<div class="menu_button"><a href="{{ asset('/onsite_form')}}">現場情報入力</a></div>

@@ -56,6 +56,23 @@ body {
   transition: 0.4s;
 }
 
+.btn_square_blue {
+  font-size: 0.75em;
+  display: block;
+  width: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 2px solid;
+  border-color: #039cc2 #0044ff #0044ff #039cc2;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.btn_square_blue:hover {
+  background: #c5c4c4;
+}
+
 .btn_circle_orange {
   display: inline-block;
   text-decoration: none;
@@ -74,6 +91,19 @@ body {
 
 .background_red {
   background: #fc0079;
+}
+
+.background_yellow {
+  background: #fce300;
+}
+
+.background_green {
+  background: #00fc37;
+}
+
+.width50px_height25px {
+  width: 50px;
+  height: 25px;
 }
 
 .top_bar {
@@ -119,7 +149,6 @@ body {
 .top_menu {
   display: flex;
   justify-content: center;
-  margin-bottom: 5%;
   background: #5876a3;
   z-index: 100;
 }
@@ -161,38 +190,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.stamp_all_wrapper .setting .btn_circle_red {
-  display: inline-block;
-  text-decoration: none;
-  color: #dc143c;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
-  border: solid 2px #dc143c;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 25px;
-  transition: 0.4s;
-}
-
-.stamp_all_wrapper .setting .btn_circle_blue {
-  display: inline-block;
-  text-decoration: none;
-  color: #668ad8;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
-  border: solid 2px #668ad8;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 25px;
-  transition: 0.4s;
 }
 
 .stamp_all_wrapper .stamp_flash_message_wrapper {
@@ -305,7 +302,7 @@ body {
   border-bottom: 1px solid black;
   box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset;
   width: 14%;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .all_wrapper_onsite_list table td {
@@ -314,8 +311,20 @@ body {
   border-bottom: 1px solid black;
   color: black;
   border-top: none;
-  width: 14%;
-  padding: 10px 0;
+}
+
+.all_wrapper_onsite_list table td button.yellow_button {
+  width: 50px;
+  height: 25px;
+  background: #fce300;
+  box-sizing: border-box;
+}
+
+.all_wrapper_onsite_list table td button.green_button {
+  width: 50px;
+  height: 25px;
+  background: #05f72d;
+  box-sizing: border-box;
 }
 
 .all_wrapper_onsite_list table td:last-child {
@@ -437,8 +446,7 @@ table td {
   color: black;
   border-top: none;
   /* box-shadow: 0px -3px 5px 1px #eee inset; */
-  width: 15%;
-  padding: 10px 0;
+  padding: 5px 5px;
 }
 
 table td:last-child {

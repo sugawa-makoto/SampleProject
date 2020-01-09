@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
-        <a href="/onsite_list" class="btn btn-primary" style="margin:20px;">一覧に戻る</a>
+        <a href="/onsite_list" class="btn_square_blue" style="margin:20px;">一覧に戻る</a>
     </div>
 </div>
 

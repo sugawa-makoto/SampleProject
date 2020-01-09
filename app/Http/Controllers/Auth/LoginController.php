@@ -34,10 +34,7 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+
 
     // ログインしたら遷移するリダイレクト先
     protected function redirectTo()

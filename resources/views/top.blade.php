@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.common_top')
 <!-- cssの追加 -->
 @section('css')
 <link rel="stylesheet" href="css/all.css">

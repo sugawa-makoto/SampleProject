@@ -33,12 +33,13 @@
                     <td class="work_title">{{$d->work_title}}</td>
                     <td class="work_detail">{{$d->work_detail}}</td>
                     <td class="people">{{$d->people}}</td>
-                    <td><a href="/onsite_list_show/{{$d->id}}" class="btn btn-primary btn-sm">詳細</a></td>
-                    <td><a href="/onsite_list_edit/{{$d->id}}" class="btn btn-primary btn-sm">編集</a></td>
+                    <td><a href="#"><button class="yellow_button" type="button">詳細</button></a></td>
+                    <!-- <td><a href="/onsite_list_show/{{$d->id}}"><button class="yellow_button" type="button">詳細</button></a></td> -->
+                    <td><a href="/onsite_list_edit/{{$d->id}}"><button class="green_button" type="button">編集</button></a></td>
                     <td>
                         <form method="post" action="/onsite_list_delete/{{$d->id}}">
                         {{ csrf_field() }}
-                        <input type="submit" value="削除" class="btn btn-danger btn-sm background_red" onclick='return confirm("本当に削除しますか？");'>
+                        <input type="submit" value="削除" class="btn btn-danger width50px_height25px btn-sm background_red" onclick='return confirm("本当に削除しますか？");'>
                         </form>
                     </td>
                 </tr>

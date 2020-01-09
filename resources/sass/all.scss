@@ -56,6 +56,21 @@ body {
   font-size: 25px;
   transition: .4s;
 }
+.btn_square_blue {
+  font-size:0.75em;
+  display:block;
+  width:150px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#039cc2 #0044ff #0044ff #039cc2;
+  background:#ffffff;
+  text-decoration:none;
+}
+.btn_square_blue:hover {
+  background:#c5c4c4;
+}
 .btn_circle_orange {
   display: inline-block;
   text-decoration: none;
@@ -73,6 +88,16 @@ body {
 }
 .background_red {
   background: rgb(252, 0, 121);
+}
+.background_yellow {
+  background: rgb(252, 227, 0);
+}
+.background_green {
+  background: rgb(0, 252, 55);
+}
+.width50px_height25px {
+  width: 50px;
+  height: 25px;
 }
 // ＊＊＊＊＊＊＊＊＊＊
 // トップバー
@@ -120,7 +145,6 @@ body {
 .top_menu {
   display: flex;
   justify-content: center;
-  margin-bottom: 5%;
   background: #5876a3;
   z-index: 100;
   a {
@@ -158,36 +182,6 @@ body {
     position: absolute;
     top:0;
     left:0;
-    .btn_circle_red {
-      display: inline-block;
-      text-decoration: none;
-      color: #dc143c;
-      width: 120px;
-      height: 120px;
-      line-height: 120px;
-      border-radius: 50%;
-      border: solid 2px #dc143c;
-      text-align: center;
-      overflow: hidden;
-      font-weight: bold;
-      font-size: 25px;
-      transition: .4s;
-    }
-    .btn_circle_blue {
-      display: inline-block;
-      text-decoration: none;
-      color: #668ad8;
-      width: 120px;
-      height: 120px;
-      line-height: 120px;
-      border-radius: 50%;
-      border: solid 2px #668ad8;
-      text-align: center;
-      overflow: hidden;
-      font-weight: bold;
-      font-size: 25px;
-      transition: .4s;
-    }
   }
   .stamp_flash_message_wrapper {
     color: #dc143c;
@@ -292,7 +286,7 @@ body {
     border-bottom: 1px solid rgb(0, 0, 0);
     box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset; 
     width: 14%;
-    padding: 10px 0;
+    padding: 15px 0;
   }
   table td{
     text-align: center;
@@ -300,8 +294,18 @@ body {
     border-bottom: 1px solid rgb(0, 0, 0);
     color: rgb(0, 0, 0);
     border-top:none;
-    width: 14%;
-    padding: 10px 0;
+    button.yellow_button {
+      width: 50px;
+      height: 25px;
+      background: rgb(252, 227, 0);
+      box-sizing: border-box;
+    }
+    button.green_button {
+      width: 50px;
+      height: 25px;
+      background: rgb(5, 247, 45);
+      box-sizing: border-box;
+    }
   }
   table td:last-child{
     border-right: 1px solid rgb(0, 0, 0);
@@ -421,8 +425,7 @@ table td{
   color: rgb(0, 0, 0);
   border-top:none;
   /* box-shadow: 0px -3px 5px 1px #eee inset; */
-  width: 15%;
-  padding: 10px 0;
+  padding: 5px 5px;
 }
 
 table td:last-child{
