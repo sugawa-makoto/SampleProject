@@ -23,7 +23,8 @@ class RecordController extends Controller {
         $i=1;
 
     $calendar = calendar::where('year',$carbon_year)->where('month',$carbon_month)->get();// 今月分の日数の羅列を取得しています。
-    $working_days = working_days::where('year',$carbon_year)->where('month',$carbon_month)->get();
+    $login_user_id = Auth::id();
+    $working_days = working_days::where('year',$carbon_year)->where('month',$carbon_month)->where('user_id',$login_user_id)->get();
     $yasumi = \DB::table('yasumi')->get();
     
 
