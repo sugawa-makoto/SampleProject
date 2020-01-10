@@ -33,7 +33,7 @@
                     <td class="work_title">{{$d->work_title}}</td>
                     <td class="work_detail">{{$d->work_detail}}</td>
                     <td class="people">{{$d->people}}</td>
-                    <td><a href="#"><button class="yellow_button" type="button">詳細</button></a></td>
+                    <td><a href="/onsite_list_show/{{$d->id}}"><button class="yellow_button" type="button">詳細</button></a></td>
                     <!-- <td><a href="/onsite_list_show/{{$d->id}}"><button class="yellow_button" type="button">詳細</button></a></td> -->
                     <td><a href="/onsite_list_edit/{{$d->id}}"><button class="green_button" type="button">編集</button></a></td>
                     <td>

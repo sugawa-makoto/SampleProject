@@ -90,9 +90,10 @@ class OnsiteController extends Controller{
     public function show($id)
     {
         //レコードを検索
-        $user = User::find($id);
+        $onsute_show = Onsite::find($id);
         //検索結果をビューに渡す
-        return view('users.show')->with('user',$user);
+        
+        return view('onsite_show')->with('onsute_show',$onsute_show);
     }
 
     public function edit($id)//フォームでPOSTされたものを取得するのではなくaタグのGETメソッドの中のidの情報をもらうだけなので(Request $request, $id)または上のdeleteアクションのようなidの取得の仕方はしなくてすむ。参考：https://qiita.com/nekyo/items/506f64ca1dcb1d82a986
