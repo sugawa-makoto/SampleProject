@@ -22,13 +22,13 @@
 	<!-- ↑トップバーの内容↑ -->
 	<!-- ↓トップメニューの内容↓ -->
 	<div class="top_menu">
-		<div class="menu_button"><a href="{{ asset('/home')}}">HOME</a></div>
-		<div class="menu_button"><a href="{{ asset('/kanri')}}">管理画面</a></div>
-		<div class="menu_button"><a href="{{ asset('/stamp')}}">勤怠画面</a></div>
-		<div class="menu_button"><a href="{{ asset('/record')}}">勤怠履歴</a></div>
-		<div class="menu_button"><a href="{{ asset('/onsite_form')}}">現場情報入力</a></div>
-		<div class="menu_button"><a href="{{ asset('/onsite_list')}}">現場情報リスト</a></div>
-		<div class="menu_button"><a href="{{ asset('/onsite_photo_list')}}">現場写真リスト</a></div>
+		<div class="menu_button"><a href='/home'>HOME</a></div>
+		<!-- <div class="menu_button"><a href="{{ asset('/kanri')}}">管理画面</a></div> -->
+		<div class="menu_button"><a href='/stamp'>勤怠画面</a></div>
+		<div class="menu_button"><a href='/record'>勤怠履歴</a></div>
+		<div class="menu_button"><a href='/onsite_form'>現場情報入力</a></div>
+		<div class="menu_button"><a href='/onsite_list'>現場情報リスト</a></div>
+		<div class="menu_button"><a href='/onsite_photo_list'>現場写真リスト</a></div>
 	</div>
 	<!-- ↑トップメニューの内容↑ -->
 	<!-- ↓固有コンテンツ表示領域↓ -->
