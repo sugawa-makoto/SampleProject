@@ -914,3 +914,57 @@ table tr:last-child td:last-child {
   justify-content: center;
 }
 
+.all_wrapper_shift {
+  display: flex;
+  justify-content: center;
+}
+
+.all_wrapper_shift table {
+  width: 30%;
+}
+
+.all_wrapper_shift table th:last-child {
+  border-radius: 0px 5px 0 0;
+  border-right: 1px solid black;
+}
+
+.all_wrapper_shift table th {
+  text-align: center;
+  color: black;
+  background: linear-gradient(#ffffff, #ffffff);
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  /* box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset; */
+  width: 15%;
+  padding: 10px 0;
+}
+
+.all_wrapper_shift table td {
+  text-align: center;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  color: black;
+  border-top: none;
+  /* box-shadow: 0px -3px 5px 1px #eee inset; */
+  padding: 5px 5px;
+}
+
+.all_wrapper_shift table td:last-child {
+  border-right: 1px solid black;
+}
+
+.all_wrapper_shift table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+.all_wrapper_shift table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0px;
+}
+
+.all_wrapper_shift .shift_hiduke {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}
+

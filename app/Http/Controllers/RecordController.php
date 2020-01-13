@@ -34,6 +34,5 @@ class RecordController extends Controller {
       return view('welcome');
     }
     return view('record',compact('calendar', 'working_days', 'yasumi'));
-      
   }
 }

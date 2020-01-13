@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// 勤怠管理アプリ用ルーティング
 Route::get('/kanri', 'KanriController@kanri');
 Route::get('/stamp', 'StampController@stamp');
 Route::post('/stamp_in', 'StampController@in');
@@ -38,5 +39,8 @@ Route::get('/database', function() {
 Auth::routes();
 
 
-
-
+// シフト管理用ルーティング
+Route::get('/shift_list', 'ShiftController@shift_list');
+Route::get('/shift_detail/{id}', 'ShiftController@shift_detail');
+Route::post('/shift_form', 'ShiftController@shift_form_send');
+Route::get('/shift_form', 'ShiftController@shift_form_input');

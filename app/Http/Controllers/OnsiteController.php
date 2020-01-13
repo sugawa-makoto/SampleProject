@@ -87,7 +87,7 @@ class OnsiteController extends Controller{
         return redirect('/onsite_list');
     }
 
-    public function show($id)
+    public function show()
     {
         //レコードを検索
         $onsute_show = Onsite::find($id);

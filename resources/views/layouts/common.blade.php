@@ -5,6 +5,10 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>I/OM=>manager_stamp</title>
    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
    @yield('css')
    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
    @yield('style')
@@ -29,6 +33,7 @@
 		<div class="menu_button"><a href='/onsite_form'>現場情報入力</a></div>
 		<div class="menu_button"><a href='/onsite_list'>現場情報リスト</a></div>
 		<div class="menu_button"><a href='/onsite_photo_list'>現場写真リスト</a></div>
+		<div class="menu_button"><a href='/shift_list'>シフト管理</a></div>
 	</div>
 	<!-- ↑トップメニューの内容↑ -->
 	<!-- ↓固有コンテンツ表示領域↓ -->

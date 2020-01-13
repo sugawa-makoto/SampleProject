@@ -864,3 +864,57 @@ transition: .4s;
   display: flex;
   justify-content: center;
 }
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+// 今日のシフト選択画面 shift_today.blade.php
+// ＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+.all_wrapper_shift {
+  display: flex;
+  justify-content: center;
+  table{
+    width: 30%;
+  }
+  
+  table th:last-child{
+    border-radius: 0px 5px 0 0;
+    border-right: 1px solid rgb(0, 0, 0);
+  }
+  
+  table th{
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background: linear-gradient(#ffffff,#ffffff);
+    border-left: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3) inset; */
+    width: 15%;
+    padding: 10px 0;
+  }
+  
+  table td{
+    text-align: center;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    border-top:none;
+    /* box-shadow: 0px -3px 5px 1px #eee inset; */
+    padding: 5px 5px;
+  }
+  
+  table td:last-child{
+    border-right: 1px solid rgb(0, 0, 0);
+  }
+  
+  table tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+  }
+
+  table tr:last-child td:last-child {
+    border-radius: 0 0 5px 0px;
+  }
+  .shift_hiduke {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+  }
+}
